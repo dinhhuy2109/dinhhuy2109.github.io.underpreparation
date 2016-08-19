@@ -1,6 +1,6 @@
 # Site wide configuration
 
-title:            Francisco Suárez Ruiz
+title:            Huy Nguyen
 locale:           en_US
 url:
 
@@ -45,24 +45,24 @@ scholar:
 
 # Site owner
 owner:
-  name: Francisco Suárez-Ruiz
-  avatar: bio-photo.png
-  bio: "I'm from Bogotá, Colombia. Currently in Singapore. Passionate about robotics, technology and football."
-  email: fsuarez6@gmail.com
-  disqus-shortname: fsuarez6githu
+  name: Huy Nguyen
+  avatar: 
+  bio: 
+  email: huy.nguyendinh09@gmail.com
+  disqus-shortname: f
   twitter: #username
   facebook: #username
   google:
     plus: #username
-    analytics: UA-71473057-1
+    analytics: 
     verify:
     ad-client:
     ad-slot:
-    scholar: uXo_Q_IAAAAJ
+    scholar: WOb6XfoAAAAJ
   bing-verify:
-  github: fsuarez6
+  github: dinhhuy2109
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: fsuarez6
+  linkedin: huy-nguyen-dinh-3200808a
   xing: #username
   instagram: #username
   lastfm: #username
@@ -71,7 +71,7 @@ owner:
   foursquare: #username
   steam: #username
   dribbble: #username
-  youtube: FSuarezRuiz
+  youtube: #username
   soundcloud: #username
   weibo: #username
   flickr: #username
