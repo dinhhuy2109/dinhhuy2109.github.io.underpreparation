@@ -2,6 +2,8 @@
 layout: page
 tags: [about, CRI, NTU, Robotics]
 comments: false
+# image:
+#  feature: cover.jpg
 ---
 
 I am currently a research student in [the School of Mechanical and
