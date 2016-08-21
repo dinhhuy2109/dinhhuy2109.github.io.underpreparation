@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-08-19T21:10:43+08:00</updated>
+<updated>2016-08-21T14:38:17+08:00</updated>
 <id>/</id>
 <author>
   <name>Huy Nguyen</name>
@@ -92,8 +92,8 @@
 
 <entry>
   <title type="html"><![CDATA[When robotic and art unite]]></title>
-  <link rel="alternate" type="text/html" href="/projects/light-drawing/" />
-  <id>/projects/light-drawing</id>
+  <link rel="alternate" type="text/html" href="/blog/light-drawing/" />
+  <id>/blog/light-drawing</id>
   <published>2016-03-26T00:00:00+08:00</published>
   <updated>2016-03-26T00:00:00+08:00</updated>
   <author>
@@ -102,17 +102,29 @@
     <email>huy.nguyendinh09@gmail.com</email>
   </author>
   <content type="html">
-    &lt;p&gt;We employ a robotic hand to do art- light drawing&lt;/p&gt;
+    &lt;p&gt;Sometimes, I asked myself: “What do I do if I’m bored out of my skull at work?”. It gave me a pause, to think about what should I do then. And an answer jumped out of my mind: “Just find things to entertain yourself. Keep your mind busy.”.&lt;/p&gt;
+
+&lt;p&gt;Oneday, my prof’s friend visited our lab. She’s an artist, looking for a coorperation between robotic and art labs. So we came up with the idea of letting a robot do art works.&lt;/p&gt;
+
+&lt;p&gt;And light-drawing was a perfect test for this idea.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Light_painting&quot;&gt;Light painting&lt;/a&gt;, or light drawing, is a photographic technique in which exposures are made by moving a hand-held light source while taking a long exposure photograph, either to illuminate a subject or to shine a point of light directly at the camera, or by moving the camera itself during exposure.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Here, we employed a robotic arm to redraw some continuous-line-drawings taken from the internet. We first needed to convert those drawings into paths which included many points in 3d coordinates. Then these data were imported into the system and we simply commanded the robot to follow these paths.&lt;/p&gt;
+
+&lt;p&gt;With the skills and system that we already had, it took us just 2 nights to come up with the first demo.&lt;/p&gt;
+
+&lt;p&gt;And the results look really amazing…&lt;/p&gt;
 
 &lt;figure&gt;
   &lt;img src=&quot;/images/face_drawing.jpeg&quot; /&gt;
 	&lt;img src=&quot;/images/dancer_drawing.jpeg&quot; /&gt;
 	&lt;img src=&quot;/images/text_drawing.jpeg&quot; /&gt;
 	&lt;img src=&quot;/images/bunny_drawing.jpeg&quot; /&gt;
-  &lt;figcaption&gt;Light drawings&lt;/figcaption&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/projects/light-drawing/&quot;&gt;When robotic and art unite&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on March 26, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;/blog/light-drawing/&quot;&gt;When robotic and art unite&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on March 26, 2016.&lt;/p&gt;
   </content>
 </entry>
 
