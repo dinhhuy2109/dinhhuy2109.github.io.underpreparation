@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>/blog/light-drawing/</loc>
+<loc>/projects/light-drawing/</loc>
 <lastmod>2016-03-26T00:00:00+08:00</lastmod>
 </url>
 <url>
@@ -13,8 +13,12 @@
 <lastmod>2016-08-19T00:00:00+08:00</lastmod>
 </url>
 <url>
-<loc>/blog/osrobotics/</loc>
+<loc>/projects/osrobotics/</loc>
 <lastmod>2017-03-15T00:00:00+08:00</lastmod>
+</url>
+<url>
+<loc>/blog/badminton/</loc>
+<lastmod>2017-03-16T00:00:00+08:00</lastmod>
 </url>
 <url>
 <loc>/curriculum/</loc>
