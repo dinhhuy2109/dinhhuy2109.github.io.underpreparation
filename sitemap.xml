@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>/blog/Ubuntu-1604-xenial-installation/</loc>
-<lastmod>2016-08-19T00:00:00+08:00</lastmod>
+<loc>/blog/light-drawing/</loc>
+<lastmod>2016-03-26T00:00:00+08:00</lastmod>
 </url>
 <url>
 <loc>/projects/airbus-shoopfloor-challenge-at-ICRA/</loc>
 <lastmod>2016-05-25T00:00:00+08:00</lastmod>
 </url>
 <url>
-<loc>/blog/light-drawing/</loc>
-<lastmod>2016-03-26T00:00:00+08:00</lastmod>
+<loc>/blog/Ubuntu-1604-xenial-installation/</loc>
+<lastmod>2016-08-19T00:00:00+08:00</lastmod>
 </url>
 <url>
 <loc>/curriculum/</loc>
