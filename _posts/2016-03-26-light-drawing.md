@@ -1,6 +1,6 @@
 ---
 layout: post
-category: blog
+category: projects
 title: "When robotic and art unite"
 excerpt: "We employed a robotic hand to do art-light drawing"
 tags: [light, drawing,robotics, art]

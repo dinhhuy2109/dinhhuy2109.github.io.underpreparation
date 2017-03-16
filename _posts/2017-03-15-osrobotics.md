@@ -1,6 +1,6 @@
 ---
 layout: post
-category: blog
+category: projects
 title: "Our website for a free course on Open-Source Robotics has been deployed"
 excerpt: "We introduce a self-learning robotics course online at http://osrobotics.org/pages/introduction_osr.html"
 tags: [osrobotics, online course, free]
