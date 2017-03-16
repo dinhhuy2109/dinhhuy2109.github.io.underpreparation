@@ -11,7 +11,7 @@ Feel free to adapt this theme to your site without linking back to me or includi
 Clone the `source` branch of this repository:
 ```{bash}
 cd ~/git
-git clone https://github.com/fsuarez6/fsuarez6.github.io.git -b source
+git clone https://github.com/dinhhuy2109/dinhhuy2109.github.io.git -b source
 ``` 
 
 You need couple of `gems` to get this website up and running. I use `rvm` to handle them:
@@ -24,7 +24,7 @@ gem install bundler
 
 Now, using bundler you can install the required `gems`:
 ```{bash}
-cd ~/git/fsuarez6.github.io
+cd ~/git/dinhhuy2109.github.io
 bundle update
 ``` 
 
@@ -36,9 +36,10 @@ sudo apt-get install nodejs
 ## Running it Locally
 
 ```{bash}
-cd ~/git/fsuarez6.github.io
+cd ~/git/dinhhuy2109.github.io
 jekyll serve --watch --port 5000
-``` 
+```
+Use your browser to access this http://localhost:5000
 
 ## Deploying
 
@@ -46,4 +47,7 @@ Because github doesn't support `jekyll-scholar` you need to build the `source` b
 
 ```{bash}
 rake
-``` 
+```
+## For MAC OSX users
+
+To install Jekyll on MaxOS X, follow the **[instruction](http://jekyll.tips/jekyll-casts/install-jekyll-on-os-x/)**
