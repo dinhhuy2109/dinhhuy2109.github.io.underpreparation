@@ -149,7 +149,9 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>A Gaussian mixture model (GMM) is a probabilistic model that assumes all the
+      <h1 id="what-is-em-gmm-how-it-works">What is EM, GMM? How it works?</h1>
+
+<p>A Gaussian mixture model (GMM) is a probabilistic model that assumes all the
 data points are generated from a mixture of a finite number of
 Gaussian distributions with unknown parameters. One can think of
 mixture models as generalizing k-means clustering to incorporate
@@ -167,13 +169,19 @@ Gaussian distribution.</p>
   distributions"</figcaption>
 </figure>
 
-<p>I found this <a href="https://people.csail.mit.edu/rameshvs/content/gmm-em.pdf">note</a> is very useful to understand the underlying theory.</p>
+<p>Below is a collection of videos with some intuitive examples for EM,
+GMM algorithms
+<a href="https://goo.gl/2up9C3">https://goo.gl/2up9C3</a></p>
 
+<p>In case you need more math, this
+<a href="https://people.csail.mit.edu/rameshvs/content/gmm-em.pdf">note</a> is
+also very useful.</p>
+
+<h1 id="scikit">Scikit</h1>
 <p>Scikit-learn implements different classes to estimate Gaussian mixture
-models, that correspond to different estimation strategies, detailed
-below.</p>
+models, that correspond to different estimation strategies.</p>
 
-<h1 id="scikit-installation">Scikit Installation</h1>
+<h2 id="scikit-installation">Scikit Installation</h2>
 <p>For Linux and MacOS, If you already have a working installation of
 numpy and scipy, the easiest way to install scikit-learn is using pip</p>
 <pre><code class="language-{bash}">pip install -U scikit-learn
@@ -186,7 +194,7 @@ numpy and scipy, the easiest way to install scikit-learn is using pip</p>
 or uninstall scikit-learn installed with Anaconda or conda you should
 not use the pip command.</em></p>
 
-<h1 id="scikitmixture-examples">Scikit.mixture examples</h1>
+<h2 id="scikitmixture-examples">Scikit.mixture examples</h2>
 
 
       <hr />
