@@ -3,7 +3,7 @@ layout: post
 category: blog
 title: "How to choose a good badminton racket?"
 excerpt: "I love playing badminton badly."
-tags: [hoobies, badminton]
+tags: [hobbies, badminton]
 comments: false
 ---
 
