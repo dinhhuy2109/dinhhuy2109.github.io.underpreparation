@@ -26,3 +26,5 @@ Cheers,
 <figure>
   <img src="{{ site.url }}/images/learn.png">
   <figcaption></figcaption>
+  </figure>
+{: refdef}

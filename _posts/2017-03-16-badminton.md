@@ -97,4 +97,5 @@ badminton racket. Therefore it can be a copyright violation.*
 <figure>
   <img src="{{ site.url }}/images/olympicicon.png">
   <figcaption>"Fig.: Rio 2016 Badminton Olympics"</figcaption>
-
+  </figure>
+{: refdef}

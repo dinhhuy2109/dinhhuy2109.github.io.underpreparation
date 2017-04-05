@@ -28,3 +28,5 @@ And the results look really amazing...
 	<img src="{{ site.url }}/images/text_drawing.jpeg">
 	<img src="{{ site.url }}/images/bunny_drawing.jpeg">
   <figcaption></figcaption>
+</figure>
+{: refdef}
