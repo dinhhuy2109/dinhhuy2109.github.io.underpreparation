@@ -6,13 +6,13 @@
 <head>
 <meta charset="utf-8">
 <title>Gaussian mixture models and the EM algorithm, python package scikit-learn &#8211; Huy Nguyen</title>
-<meta name="description" content="Introduce to GMM and EM algorithm, tutorials to scikit-learn.">
+<meta name="description" content="A short introduction to GMM and EM algorithms, tutorials to scikit-learn.">
 <meta name="keywords" content="learning, GMM, EM, sklearn, python">
 
 
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Gaussian mixture models and the EM algorithm, python package scikit-learn">
-<meta name="twitter:description" content="Introduce to GMM and EM algorithm, tutorials to scikit-learn.">
+<meta name="twitter:description" content="A short introduction to GMM and EM algorithms, tutorials to scikit-learn.">
 
 
 
@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Gaussian mixture models and the EM algorithm, python package scikit-learn">
-<meta property="og:description" content="Introduce to GMM and EM algorithm, tutorials to scikit-learn.">
+<meta property="og:description" content="A short introduction to GMM and EM algorithms, tutorials to scikit-learn.">
 <meta property="og:url" content="/blog/gmm-em/">
 <meta property="og:site_name" content="Huy Nguyen">
 
@@ -149,7 +149,45 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>https://people.csail.mit.edu/rameshvs/content/gmm-em.pdf</p>
+      <p>A Gaussian mixture model (GMM) is a probabilistic model that assumes all the
+data points are generated from a mixture of a finite number of
+Gaussian distributions with unknown parameters. One can think of
+mixture models as generalizing k-means clustering to incorporate
+information about the covariance structure of the data as well as the
+centers of the latent Gaussians.</p>
+
+<p>A GMM is
+useful for modeling data that comes from one of several groups: the
+groups might be different from each other, but data points within the same group can be well-modeled by a
+Gaussian distribution.</p>
+
+<figure style="text-align: center;">
+  <img src="/images/gmm-example.pdf" />
+  <figcaption>"Fig.: An example of a mixture of 2 Gaussian
+  distributions"</figcaption>
+</figure>
+
+<p>I found this <a href="https://people.csail.mit.edu/rameshvs/content/gmm-em.pdf">note</a> is very useful to understand the underlying theory.</p>
+
+<p>Scikit-learn implements different classes to estimate Gaussian mixture
+models, that correspond to different estimation strategies, detailed
+below.</p>
+
+<h1 id="scikit-installation">Scikit Installation</h1>
+<p>For Linux and MacOS, If you already have a working installation of
+numpy and scipy, the easiest way to install scikit-learn is using pip</p>
+<pre><code class="language-{bash}">pip install -U scikit-learn
+</code></pre>
+<p>or conda:</p>
+
+<pre><code class="language-{bash}">conda install scikit-learn
+</code></pre>
+<p><em>Note: Please be consistent when using pip or conda, e.g. to upgrade
+or uninstall scikit-learn installed with Anaconda or conda you should
+not use the pip command.</em></p>
+
+<h1 id="scikitmixture-examples">Scikit.mixture examples</h1>
+
 
       <hr />
       <footer role="contentinfo">
