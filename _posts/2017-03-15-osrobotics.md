@@ -22,9 +22,13 @@ Python, Git, OpenRave, OpenCV, PCL, ROS, Gazebo)*.
 
 Cheers,
 
-{:refdef: style="text-align: center;"}
+{:refdef: style="width: 100%; text-align: center;"}
 <figure>
-  <img src="{{ site.url }}/images/learn.png">
-  <figcaption></figcaption>
-  </figure>
+	<img src="{{ site.url }}/images/workingtabletopview.jpg" >
+	<figcaption>Image designed
+by <a
+href="http://www.freepik.com/free-vector/workplace-in-top-view_788440.htm">Freepik</a> </figcaption>
+</figure>
 {: refdef}
+	
+
