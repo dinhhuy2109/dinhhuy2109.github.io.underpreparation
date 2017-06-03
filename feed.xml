@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2017-04-26T17:07:29+08:00</updated>
+<updated>2017-06-03T19:08:32+08:00</updated>
 <id>/</id>
 <author>
   <name>Huy Nguyen</name>
@@ -213,10 +213,12 @@ Python, Git, OpenRave, OpenCV, PCL, ROS, Gazebo)&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Cheers,&lt;/p&gt;
 
-&lt;figure style=&quot;text-align: center;&quot;&gt;
-  &lt;img src=&quot;/images/learn.png&quot; /&gt;
-  &lt;figcaption&gt;&lt;/figcaption&gt;
-  &lt;/figure&gt;
+&lt;figure style=&quot;width: 100%; text-align: center;&quot;&gt;
+	&lt;img src=&quot;/images/workingtabletopview.jpg&quot; /&gt;
+	&lt;figcaption&gt;Image designed
+by &lt;a href=&quot;http://www.freepik.com/free-vector/workplace-in-top-view_788440.htm&quot;&gt;Freepik&lt;/a&gt; &lt;/figcaption&gt;
+&lt;/figure&gt;
+
 
     &lt;p&gt;&lt;a href=&quot;/projects/osrobotics/&quot;&gt;Our website for a free course on Open-Source Robotics has been deployed&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on March 15, 2017.&lt;/p&gt;
   </content>
