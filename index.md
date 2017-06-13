@@ -11,8 +11,8 @@ Engineering](http://www.mae.ntu.edu.sg/Pages/Home.aspx), [Nanyang
 Technological University](http://www.ntu.edu.sg/Pages/home.aspx),
 Singapore, under the supervision of Asst. Prof. [Pham Quang Cuong](http://www.ntu.edu.sg/home/cuong/).
 
-Research interests include intelligent perception, robot-camera
-calibration, uncertainty in manipluation tasks, integration of 3D
+Research interests include intelligent perception; robot-camera
+calibration; uncertainty in manipluation tasks; integration of 3D
 perception, tactile perception and compliant control.
 
 Experience with the open source Robot Operating System (ROS), the

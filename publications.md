@@ -14,22 +14,25 @@ comments: false
 
 {% bibliography --query @inproceedings --file publications %}
 
-### Book chapters
+<!-- ### Book chapters -->
 
-{% bibliography --query @incollection --file publications %}
+<!-- {% bibliography --query @incollection --file publications %} -->
 
 ### Theses
 
-{% bibliography --query @phdthesis,@mastersthesis,@bachelorsthesis --file publications %}
+{% bibliography --query @phdthesis,@mastersthesis,@bachelorthesis --file publications %}
 
-### Patents
+<!-- ### Patents -->
 
-{% bibliography --query @patent --file publications %}
+<!-- {% bibliography --query @patent --file publications %} -->
 
 ### Research reports
 
 {% bibliography --query @techreport --file publications %}
 
-### Websites
+<!-- ### Websites -->
 
-{% bibliography --query @online --file publications %}
+<!-- {% bibliography --query @online --file publications %} -->
+
+### In preparation
+{% bibliography --query @inpreparation --file publications %}
