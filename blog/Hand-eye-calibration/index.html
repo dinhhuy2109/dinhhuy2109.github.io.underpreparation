@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>We won 2nd place at Airbus Shopfloor Challenge @ICRA2016 &#8211; Huy Nguyen</title>
-<meta name="description" content="Competing teams designed and built robotic systems that are able to perform accurate drilling compliant with aeronautic standards. ">
-<meta name="keywords" content="ICRA2016, Airbus, Challenge">
+<title>Hand-eye calibration &#8211; Huy Nguyen</title>
+<meta name="description" content="A short introduction to hand-eye calibration (camera-robot calibration).">
+<meta name="keywords" content="learning, calibration">
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="We won 2nd place at Airbus Shopfloor Challenge @ICRA2016">
-<meta name="twitter:description" content="Competing teams designed and built robotic systems that are able to perform accurate drilling compliant with aeronautic standards. ">
+<meta name="twitter:title" content="Hand-eye calibration">
+<meta name="twitter:description" content="A short introduction to hand-eye calibration (camera-robot calibration).">
 
 
 
@@ -22,9 +22,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="We won 2nd place at Airbus Shopfloor Challenge @ICRA2016">
-<meta property="og:description" content="Competing teams designed and built robotic systems that are able to perform accurate drilling compliant with aeronautic standards. ">
-<meta property="og:url" content="/projects/airbus-shoopfloor-challenge-at-ICRA/">
+<meta property="og:title" content="Hand-eye calibration">
+<meta property="og:description" content="A short introduction to hand-eye calibration (camera-robot calibration).">
+<meta property="og:url" content="/blog/Hand-eye-calibration/">
 <meta property="og:site_name" content="Huy Nguyen">
 
 <meta property="og:image" content="/images/default-thumb.png">
@@ -34,7 +34,7 @@
 
 
 
-<link rel="canonical" href="/projects/airbus-shoopfloor-challenge-at-ICRA/">
+<link rel="canonical" href="/blog/Hand-eye-calibration/">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Huy Nguyen Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -142,31 +142,91 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="/projects/airbus-shoopfloor-challenge-at-ICRA/" rel="bookmark" title="We won 2nd place at Airbus Shopfloor Challenge @ICRA2016">We won 2nd place at Airbus Shopfloor Challenge @ICRA2016</a></h1>
+        <h1><a href="/blog/Hand-eye-calibration/" rel="bookmark" title="Hand-eye calibration">Hand-eye calibration</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <h3 id="may-2016">May 2016</h3>
+      <h4 id="to-be-updated">To be updated</h4>
 
-<p>Our research group participated in Airbus Shopfloor Challenge which was held at IEEE International Conference on Robotics and Automation (ICRA) 15-21 May 2016 in Stockholm, Sweden.</p>
+<p>To relate the object pose
+estimation to the robot base frame, the problem of determining the
+transformation between the sensor and the end-effector is
+crucial. This problem is usually referred as hand-eye calibration
+problem and has long been an interesting topic which draws an
+extensive attention from many robotic researchers. Here we
+will show you how to formulate the hand-eye calibration problem as
+well as suggest some relevant approaches to solve it.</p>
 
-<p>Many tasks in an aircraft assembly line involve drilling. At Airbus, million of holes are needed to be drilled every year, by human operators. This motivates the company to look for automated solutions for drilling process. A competing team needed to build a light-weighted robot system (weighing less than 100 kg.) able to perform drilling tasks with a stringent accuracy requirement. In particular, a competing robot needed to drill a given pattern of 255 holes on a 70 cm. x 70 cm. aluminium plate.</p>
+<!-- In this Chapter, we consider one of the most fundamental tasks of -->
+<!-- robot vision: *determining the position of the object relative to the -->
+<!-- robot*. -->
 
-<p>Our solution consisted of a 6-DOF Denso VS-060 arm equipped with an industrial ENSENSO camera and a drill at the end-effector. Simulations in a virtual environment were done using OpenRAVE. We used ROS for system integration and real-time communication with the robot.</p>
-
-<p>I was in charge of sensor, robot calibrations and perception for the system. The calibration tasks includes the tool (drill bit) calibration, camera calibration and hand-eye calibration. The perception tasks were to locate the aluminium plate (with respect to 3 small reference holes on the plate). Following the aircaft manufacturing standard, this challenge has a very high accuracy requirement; therefore, calibration and perception are really crucial. We developed new tool-base calibration method that allows us to perform quickly the calibration with high accuracy. During this time, we also came up with the new approach for hand-eye calibration [paper]. The perception solution is a combination of 3D (pointcloud) an 2D (image) processing.</p>
-
-<p>Our team finished at second! You can find the coverage on the <a href="http://company.airbus.com/careers/Working-for-Airbus/Airbus-Shopfloor-Challenge-2016.html">Airbus website</a>, <a href="http://robohub.org/airbus-shopfloor-challenge-overview-with-video/">Robohub</a>, <a href="http://www.mae.ntu.edu.sg/NewsnEvents/Pages/Detailed-Page.aspx?news=9719917d-4ffb-40ac-aaf6-897f5ed58a93">NTU MAE website</a>.</p>
-
-<p>Bonus: We had 3 months to build up our system (since we decided to join the challenge). We did work really had. And we did learn a lot from the challenge! Such a great experience!</p>
-
-<figure style="text-align: center">
-  <img src="/images/airbus_challenge.jpg" />
-  <figcaption>Fig.1: Our team with the robot. We drilled the group name onto the plate to showcase our abilies to airbus for the first round.</figcaption>
+<figure style="text-align: center;">
+  <img src="/images/denso-ensenso-object.png" />
+  <figcaption>"Fig.1 : A robot system with a camera mounted on the end-effector."</figcaption>
 </figure>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FUmx7c8P-gs?start=179" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-<figcaption style="text-align: center">Vid.1: Interview at the live competition</figcaption>
+<!-- To have a better visualization of the problem, let us briefly consider -->
+<!-- a robotics system as depicted in Fig. 1. The relative -->
+<!-- transformation $_{b} T^{o}$ between the object -->
+<!-- and the robot base is determined as follows: -->
+
+<!-- Approaches and Implementations -->
+<!-- ============================================ -->
+<!-- As :math:`\bfX`, :math:`\bfA` and :math:`\bfB` represent rigid-body trans- formations, they live in -->
+<!-- :math:`\bfS \bfE(3)`, a subset of the space of 4×4 matrices endowed with a -->
+<!-- non-trivial Lie group structure, solving for :math:`\bfX` a difficult -->
+<!-- problem. As it will requires many advanced mathematics theories to solve -->
+<!-- this problem, we only list out some well-known articles for your reference. -->
+
+<!-- - Using the Euclidean Group: -->
+
+<!--   Park F. & Martin B., *Robot Sensor Calibration: Solving AX = XB -->
+<!--   on the Euclidean Group*,  IEEE Transactions on Robotics and -->
+<!--   Automation, (10) 1994, p. 717–721, available at `robotics.snu.ac.kr <http://robotics.snu.ac.kr/fcp/files/_pdf_files_publications/7_c/robot_sensor_calibration.pdf>`_ -->
+
+<!-- - Using dual quaternions: -->
+
+<!--   Daniilidis K., *Hand-eye calibration using dual quaternions* -->
+<!--   Int. Journ. Robotics Res, 18: 286-298, 1999, available at -->
+<!--   `citeseerx.ist.psu.edu <http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.18.366&rep=rep1&type=pdf>`_ -->
+
+<!-- - Others: -->
+
+<!--   Strobl, K. H., & Hirzinger, G. (2006, October), *Optimal hand-eye -->
+<!--   calibration*, In Intelligent Robots and Systems, 2006 IEEE/RSJ -->
+<!--   International Conference on (pp. 4647-4653),  available at -->
+<!--   `here <http://ai2-s2-pdfs.s3.amazonaws.com/0646/aaa662a8e0b2a0a2bbcad938d68cd45102f7.pdf>`_ -->
+
+<!-- Our open-source python implementation of F. Park, B. Martin's paper is available at . -->
+
+<blockquote>
+  <h1 id="exercises">Exercises</h1>
+  <p><strong>Note that:</strong> Sometimes the camera may not be mounted on the end-effector
+but on a fixed stand (the system in fig. 2 is a prime
+example). In this case the relative transformation between the camera
+and the robot base is required to relate the object pose estimation to
+the robot base frame. This problem can also be formulated as the :math:<code>\bfA\bfX = \bfX\bfB</code>
+problem by commanding the robot moving a pattern mounted on its end
+effector while observing this pattern from the camera. (We let you do
+this as an exercise.)</p>
+</blockquote>
+
+<!-- .. admonition:: Exercise -->
+
+<!--    Consider the system in fig. 2, formulate the problem of finding the -->
+<!--    relative transformation between the camera and the robot base as -->
+<!--    the :math:`\bfA\bfX = \bfX\bfB` problem. -->
+
+<!--    .. figure:: ../figures/robot_vision/ensenso-denso-fixed.png -->
+<!--       :width: 80% -->
+<!--       :alt: denso -->
+<!--       :align: center -->
+
+<!--       ..    -->
+
+<!-- 	 Fig. 2: A robot system where the camera is not mounted on the -->
+<!-- 	 end-effector but on a fixed stand. -->
 
       <hr />
       <footer role="contentinfo">
@@ -174,17 +234,17 @@
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=/projects/airbus-shoopfloor-challenge-at-ICRA/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=/blog/Hand-eye-calibration/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-     <a href="https://www.facebook.com/sharer/sharer.php?u=/projects/airbus-shoopfloor-challenge-at-ICRA/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+     <a href="https://www.facebook.com/sharer/sharer.php?u=/blog/Hand-eye-calibration/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=/projects/airbus-shoopfloor-challenge-at-ICRA/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=/blog/Hand-eye-calibration/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>We won 2nd place at Airbus Shopfloor Challenge @ICRA2016</strong> was published on <time datetime="2016-05-25T00:00:00+08:00">May 25, 2016</time>.</p>
+        <p class="byline"><strong>Hand-eye calibration</strong> was published on <time datetime="2018-05-10T00:00:00+08:00">May 10, 2018</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -199,11 +259,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="/blog/Hand-eye-calibration/" title="Hand-eye calibration">Hand-eye calibration</a></li>
-    
       <li><a href="/projects/ikea-assembly/" title="Robotic assembly of an ikea chair">Robotic assembly of an ikea chair</a></li>
     
       <li><a href="/projects/art-threading/" title="Plot a portrait using 1 single thread">Plot a portrait using 1 single thread</a></li>
+    
+      <li><a href="/blog/badminton/" title="How to choose a good badminton racket?">How to choose a good badminton racket?</a></li>
     
     </ul>
     <hr />
