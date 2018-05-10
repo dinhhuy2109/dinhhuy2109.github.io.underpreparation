@@ -2,20 +2,33 @@
 layout: post
 category: projects
 title: "We won 2nd place at Airbus Shopfloor Challenge @ICRA2016"
-excerpt: "Competing teams designed and built robotic systems that are able to perform accurate drilling compliant with aeronautic standards."
+excerpt: "Competing teams designed and built robotic systems that are able to perform accurate drilling compliant with aeronautic standards. "
 tags: [ICRA2016, Airbus, Challenge]
 comments: true
 ---
 
 ### May 2016
 
-The Airbus Shopfloor Challenge invited robotics teams from around the world to create innovative robotic solutions for a real-life manufacturing challenge, and compete live at the IEEE 2016 International Conference on Robotics and Automation (ICRA) 15-21 May 2016 in Stockholm, Sweden.
+Our research group participated in Airbus Shopfloor Challenge which was held at IEEE International Conference on Robotics and Automation (ICRA) 15-21 May 2016 in Stockholm, Sweden.
 
-Our team finished at second! See the coverage on the [Airbus website](http://www.airbusgroup.com/int/en/people-careers/Working-for-Airbus-Group/Airbus-Shopfloor-Challenge-2016.html), [Robohub](http://robohub.org/airbus-shopfloor-challenge-overview-with-video/), [NTU MAE website](http://www.mae.ntu.edu.sg/NewsnEvents/Pages/Detailed-Page.aspx?news=9719917d-4ffb-40ac-aaf6-897f5ed58a93).
+Many tasks in an aircraft assembly line involve drilling. At Airbus, million of holes are needed to be drilled every year, by human operators. This motivates the company to look for automated solutions for drilling process. A competing team needed to build a light-weighted robot system (weighing less than 100 kg.) able to perform drilling tasks with a stringent accuracy requirement. In particular, a competing robot needed to drill a given pattern of 255 holes on a 70 cm. x 70 cm. aluminium plate.
+
+Our solution consisted of a 6-DOF Denso VS-060 arm equipped with an industrial ENSENSO camera and a drill at the end-effector. Simulations in a virtual environment were done using OpenRAVE. We used ROS for system integration and real-time communication with the robot.
+
+I was in charge of sensor, robot calibrations and perception for the system. The calibration tasks includes the tool (drill bit) calibration, camera calibration and hand-eye calibration. The perception tasks were to locate the aluminium plate (with respect to 3 small reference holes on the plate). Following the aircaft manufacturing standard, this challenge has a very high accuracy requirement; therefore, calibration and perception are really crucial. We developed new tool-base calibration method that allows us to perform quickly the calibration with high accuracy. During this time, we also came up with the new approach for hand-eye calibration [paper]. The perception solution is a combination of 3D (pointcloud) an 2D (image) processing.
+ 
+Our team finished at second! You can find the coverage on the [Airbus website](http://company.airbus.com/careers/Working-for-Airbus/Airbus-Shopfloor-Challenge-2016.html), [Robohub](http://robohub.org/airbus-shopfloor-challenge-overview-with-video/), [NTU MAE website](http://www.mae.ntu.edu.sg/NewsnEvents/Pages/Detailed-Page.aspx?news=9719917d-4ffb-40ac-aaf6-897f5ed58a93).
+
+Bonus: We had 3 months to build up our system (since we decided to join the challenge). We did work really had. And we did learn a lot from the challenge! Such a great experience!
+
+{:refdef: style="text-align: center"}
+<figure>
+  <img src="{{ site.url }}/images/airbus_challenge.jpg">
+  <figcaption>Fig.1: Our team with the robot. We drilled the group name onto the plate to showcase our abilies to airbus for the first round.</figcaption>
+</figure>
+{: refdef}
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FUmx7c8P-gs?start=179" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-<!-- <blockquote class="instagram-media" data-instgrm-version="7" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/BF0Uz4DiYcg/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A photo posted by Huy Nguyen Dinh (@dinhhuy21_09)</a> on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2016-05-25T04:55:34+00:00">May 24, 2016 at 9:55pm PDT</time></p></div></blockquote> -->
-<!-- <script async defer src="//platform.instagram.com/en_US/embeds.js"></script> -->
-<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="7" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:26.5277777778% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/BEK0zsUCYWH/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">Ready for Sweden</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A photo posted by Huy Nguyen Dinh (@dinhhuy21_09) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2016-04-14T05:35:40+00:00">Apr 13, 2016 at 10:35pm PDT</time></p></div></blockquote>
-<script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+{:refdef: style="text-align: center"}
+<figcaption>Vid.1: Interview at the live competition</figcaption>
+{: refdef}
