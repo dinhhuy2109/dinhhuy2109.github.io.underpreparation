@@ -19,7 +19,7 @@ I was in charge of sensor, robot calibrations and perception for the system. The
  
 Our team finished at second! You can find the coverage on the [Airbus website](http://company.airbus.com/careers/Working-for-Airbus/Airbus-Shopfloor-Challenge-2016.html), [Robohub](http://robohub.org/airbus-shopfloor-challenge-overview-with-video/), [NTU MAE website](http://www.mae.ntu.edu.sg/NewsnEvents/Pages/Detailed-Page.aspx?news=9719917d-4ffb-40ac-aaf6-897f5ed58a93).
 
-Bonus: We had 3 months to build up our system (since we decided to join the challenge). We did work really had. And we did learn a lot from the challenge! Such a great experience!
+Bonus: We had 3 months to build up our system (since we decided to join the challenge). We did work really hard. And we did learn a lot from the challenge! Such a great experience!
 
 {:refdef: style="text-align: center"}
 <figure>
