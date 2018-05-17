@@ -2,7 +2,7 @@
 layout: page
 tags: [about, CRI, NTU, Robotics]
 comments: false
-# image:
+#image:
 #  feature: cover.jpg
 ---
 
