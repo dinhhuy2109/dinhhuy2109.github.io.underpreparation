@@ -10,9 +10,9 @@ comments: false
 
 {% bibliography --query @article --file publications %}
 
-### Conference proceedings 
+<!-- ### Conference proceedings  -->
 
-{% bibliography --query @inproceedings --file publications %}
+<!-- {% bibliography --query @inproceedings --file publications %} -->
 
 <!-- ### Book chapters -->
 

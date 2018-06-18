@@ -4,7 +4,7 @@
    (LaTeX-add-bibitems
     "huy17arxivicra"
     "huy16jgcd"
-    "huy17arxiv"
+    "huy18tro"
     "huy16qereport"
     "huy13bachelorthesis")))
 
