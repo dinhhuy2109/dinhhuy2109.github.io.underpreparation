@@ -48,6 +48,11 @@ kill) 
 
 [https://www.youtube.com/watch?v=e826uzJ7gYg](https://www.youtube.com/watch?v=e826uzJ7gYg)
 
+Positioning is extremely important in doubles. Watch the following
+video and practise these moves with your partner.
+
+[https://www.youtube.com/watch?v=XMYbU08AOaw](https://www.youtube.com/watch?v=XMYbU08AOaw)
+
 *Please note that, this sharing section is gathered/copied from many online sources.*
 
 {:refdef: style="text-align: center;"}
