@@ -11,6 +11,7 @@ comments: false
 In this post, I list out  some basic techniques that are commonly required
 when playing badminton:
 
+### Brief introduction
 1. Grip in Badminton
 2. Serve 
 3. Clear shot
@@ -21,12 +22,14 @@ when playing badminton:
 8. Net shot
 9. Backhand shot
 
-A brief introduction to these techniques can be found here
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/SF8G--iZN4U?rel=0" frameborder="0"
+allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-[https://www.youtube.com/watch?v=SF8G--iZN4U](https://www.youtube.com/watch?v=SF8G--iZN4U)
 
-Some indeep guides on how to do these techniques (foot steps, hand and body
-poses):
+### Indeep tutorials:
+
+Note the foot steps, hand and body poses:
 
 - Lifting defense
 
@@ -48,10 +51,15 @@ kill) 
 
 [https://www.youtube.com/watch?v=e826uzJ7gYg](https://www.youtube.com/watch?v=e826uzJ7gYg)
 
+### Posisitoning in doubles
 Positioning is extremely important in doubles. Watch the following
 video and practise these moves with your partner.
 
-[https://www.youtube.com/watch?v=XMYbU08AOaw](https://www.youtube.com/watch?v=XMYbU08AOaw)
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/XMYbU08AOaw?rel=0" frameborder="0"
+allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
 
 *Please note that, this sharing section is gathered/copied from many online sources.*
 
