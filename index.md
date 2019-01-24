@@ -6,10 +6,10 @@ comments: false
 #  feature: cover.jpg
 ---
 
-I am currently a PhD student in [the School of Mechanical and
+I am currently a researcher at Prof. Pham Quang Cuong's [CRI group](http://www.ntu.edu.sg/home/cuong/) in [the School of Mechanical and
 Engineering](http://www.mae.ntu.edu.sg/Pages/Home.aspx), [Nanyang
 Technological University](http://www.ntu.edu.sg/Pages/home.aspx),
-Singapore, under the supervision of Asst. Prof. [Pham Quang Cuong](http://www.ntu.edu.sg/home/cuong/).
+Singapore.
 
 My research interests include intelligent perception; robot-camera
 calibration; uncertainty in manipluation tasks; integration of 3D
