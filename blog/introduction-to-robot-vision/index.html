@@ -1,0 +1,438 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Introduction to robot vision &#8211; Huy Nguyen</title>
+<meta name="description" content="A short introduction to robot vision including installations and algorithms.">
+<meta name="keywords" content="learning, opencv, pcl">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Introduction to robot vision">
+<meta name="twitter:description" content="A short introduction to robot vision including installations and algorithms.">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introduction to robot vision">
+<meta property="og:description" content="A short introduction to robot vision including installations and algorithms.">
+<meta property="og:url" content="/blog/introduction-to-robot-vision/">
+<meta property="og:site_name" content="Huy Nguyen">
+
+<meta property="og:image" content="/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="/blog/introduction-to-robot-vision/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Huy Nguyen Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/academicons.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">Huy Nguyen</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="/curriculum/" >CV</a></li>
+				
+				    
+				    <li><a href="/projects/" >Projects</a></li>
+				
+				    
+				    <li><a href="/publications/" >Publications</a></li>
+				
+				    
+				    <li><a href="/posts/" >Blog</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+  <img src="/images/bio-photo.jpg" class="bio-photo" alt="Huy Nguyen bio photo">
+
+
+  <h3 itemprop="name">Huy Nguyen</h3>
+  <p>Tough times don't last. Tough people do.</p>
+  <a href="mailto:huy.nguyendinh09@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  
+  
+  <a href="http://linkedin.com/in/huy-nguyen-3200808a" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/dinhhuy2109" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <a href="http://scholar.google.es/citations?user=WOb6XfoAAAAJ" class="author-social" target="_blank"><i class="ai ai-google-scholar"></i>&nbsp; G. Scholar</a>
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/blog/introduction-to-robot-vision/" rel="bookmark" title="Introduction to robot vision">Introduction to robot vision</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <h3 id="i-introduction">I-Introduction:</h3>
+
+<p>The purpose of robot vision is to locate the robot with respect to its
+external environment so that it can safely and efficiently perform its
+intended tasks. In mobile robotics, the external environment consists
+of the robot’s destination, routes, obstacles, etc. Knowing its
+position and orientation with respect to these elements enables the
+robot to safely navigate towards its destination.</p>
+
+<p>In industrial settings, the external environment mainly consists of
+obstacles and workpieces: parts to be assembled, panels to be drilled
+on, products to be inspected, etc. The objective of this Chapter is to
+present the algorithms and software tools to determine precisely the
+location of workpieces with respect to the robot, which will next
+enable the robot to perform its intended task–assembly, drilling,
+inspection, etc.</p>
+
+<figure style="text-align: center;">
+  <img src="/images/denso-ensenso-object.png" />
+  <figcaption>"Fig.: Locating a workpiece with respect to the camera and to the
+robot."</figcaption>
+</figure>
+
+<p>There are two main types of visual data: 2D (images) and 3D (point
+clouds). Section 2D vision presents basic algorithms, such as
+filtering or feature detection, and associated software tools to deal
+with 2D images. Section 3D vision introduces algorithms for object location
+using a 3D camera.</p>
+
+<h3 id="ii-object-pose-estimation-from-2d-images">II-Object pose estimation from 2D images:</h3>
+<p>Since there is already an <a href="http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_tutorials.html">excellent OpenCV tutorial</a>,
+we shall not duplicate the effort here. The reader is advised to go
+through the whole tutorial, with particular attention to the following
+sections:</p>
+
+<ol>
+  <li>
+    <p><a href="http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_imgproc/py_canny/py_canny.html#canny">Canny edge detection</a></p>
+  </li>
+  <li>
+    <p><a href="http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_table_of_contents_contours/py_table_of_contents_contours.html#table-of-content-contours">Contours</a></p>
+  </li>
+  <li>
+    <p><a href="http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html#hough-lines">Hough line transform</a></p>
+  </li>
+  <li>
+    <p><a href="http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_table_of_contents_feature2d/py_table_of_contents_feature2d.html#py-table-of-content-feature2d">Feature detection and description</a></p>
+  </li>
+</ol>
+
+<p>We shall see now, through an example, how OpenCV can be used in a
+robotics setting.</p>
+
+<blockquote>
+  <h4 id="example-finding-the-3d-position-of-a-hole-using-stereo-vision">Example: Finding the 3D position of a hole using stereo vision</h4>
+  <p>Many robotic applications, such as assembly or riveting, require
+finding the 3D positions of circular holes. Fig. 26  shows a scene
+as captured by a stereo camera. This example demonstrates how to find the
+coordinates of the hole in the 2D images and how to subsequently
+determine its 3D position.</p>
+  <figure style="text-align: center;">
+ <img src="/images/stereo_image.png" />
+ <figcaption>"Fig.: Scene captured by a stereo camera (left and right views)."</figcaption>
+</figure>
+  <p>First, make sure that you have installed
+<a href="../installation/vision.md#installation">OpenCV</a>.
+Define the function that finds the center of a hole in an image</p>
+
+  <pre><code class="language-python">import numpy as np
+import cv2
+def get_hole_center2d(image):
+	image_blur = cv2.blur(image, (5,5))
+	image_edges = cv2.Canny(image_blur, 60, 120)
+	(thresh, image_bw) = cv2.threshold(image_edges, 80, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+	if image_bw is None:
+		return False, None
+	image_contours, contours, hierarchy = cv2.findContours(image_bw, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+	image_contours = cv2.cvtColor(image_contours, cv2.COLOR_GRAY2RGB)
+	for i,cnt in enumerate(contours):
+		if len(np.squeeze(cnt)) &gt; 5:
+			rect = np.array(cv2.minAreaRect(cnt))
+			(delta_u, delta_v) = rect[1]
+			diameter_pixel = max(delta_u,delta_v)
+			circularity = delta_u/delta_v if delta_v &gt; delta_u  else delta_v/delta_u
+			good_circularity = circularity &gt; 0.8
+			good_diameter = diameter_pixel &gt; 30
+			if good_circularity and good_diameter:
+				cv2.drawContours(image_contours, [cnt], 0, [0,0,255], 2)
+				cv2.imwrite('image_contours.png',image_contours)
+				return True, rect
+	return False, False
+limage = cv2.imread('left_image.png', 0)
+success, lres = get_hole_center2d(limage)
+rimage = cv2.imread('right_image.png', 0)
+success, rres = get_hole_center2d(rimage)
+</code></pre>
+
+  <figure style="text-align: center;">
+  <img src="/images/image_contours.png" />
+  <figcaption>"Fig.: The hole contour is detected in the right image."</figcaption>
+</figure>
+
+  <p>Once the hole positions in the left and right camera views have been
+detected, one can use the camera information to reconstruct the 3D
+position by stereo vision. The theory for stereo vision can be found
+<a href="http://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html">here</a>.</p>
+
+  <pre><code class="language-python"># Load camera info from yaml files
+import yaml
+left_calib_data = yaml.load( open("left_camera_info.yaml", "r"))
+left_cam_matrix = left_calib_data["P"] 
+right_calib_data = yaml.load( open("right_camera_info.yaml", "r"))
+right_cam_matrix = right_calib_data["P"] 
+# Compute projection matrix Q
+Tx = right_cam_matrix[3]
+fx = right_cam_matrix[0]
+B = (-Tx / fx)
+lCx = left_cam_matrix[2]
+lCy = left_cam_matrix[6]
+rCx = right_cam_matrix[2]
+rCy = right_cam_matrix[6]
+Q = np.zeros((4,4))
+Q[3,2] = 1./B
+Q[0,3] = -lCx
+Q[1,3] = -lCy
+Q[2,3] = fx
+Q[3,3] = (rCx-lCx)/B
+# Reproject pixel point into 3D coordinates
+lhcenter = lres[0]
+rhcenter = rres[0]
+disparity = lhcenter[0] - rhcenter[0]
+XYZ = np.dot(Q, np.array([lhcenter[0], lhcenter[1], disparity, 1]))
+XYZ /= XYZ[-1]
+print "3D coordinates of the hole: ", XYZ[:3]
+</code></pre>
+
+  <p>3D coordinates of the hole:  [-0.22933565 -0.2300843   0.64514768]</p>
+</blockquote>
+
+<h3 id="iii-processing-3d-point-clouds-using-pcl">III-Processing 3D point clouds using PCL</h3>
+
+<p>Contrary to conventional 2D cameras, which provide 2D images of the
+world, 3D cameras provide 3D information in the form of point
+clouds. A point cloud is a collection of points described by their
+X-Y-Z coordinates.</p>
+
+<p>PCL is a good library that provides a number of functionalities to
+manipulate point clouds. Unfortunately, contrary to OpenCV, the Python
+bindings to PCL are very limited. This tutorial will therefore deal
+with the C++ library.</p>
+
+<p>Since there is already an <a href="http://pointclouds.org/documentation/tutorials/">excellent PCL tutorial</a>, we shall not
+duplicate the effort here. The reader is advised to go through the
+whole tutorial, with particular attention to the following
+sections:</p>
+
+<ol>
+  <li>
+    <p><a href="http://pointclouds.org/documentation/tutorials/#basic-usage">Basic usage</a></p>
+  </li>
+  <li>
+    <p><a href="http://pointclouds.org/documentation/tutorials/#i-o">I/O</a></p>
+  </li>
+  <li>
+    <p><a href="http://pointclouds.org/documentation/tutorials/#filtering-tutorial">Filtering</a></p>
+  </li>
+  <li>
+    <p><a href="http://pointclouds.org/documentation/tutorials/#features-tutorial">Features</a></p>
+  </li>
+  <li>
+    <p><a href="http://pointclouds.org/documentation/tutorials/#recognition-tutorial">Recoginition</a></p>
+  </li>
+  <li>
+    <p><a href="http://pointclouds.org/documentation/tutorials/#registration-tutorial">Registration</a></p>
+  </li>
+</ol>
+
+<p>We shall see now, through an example, how PCL can be
+used in a robotics setting.</p>
+
+<blockquote>
+  <h4 id="exampleobject-pose-estimation-in-pcl">Example::Object pose estimation in PCL</h4>
+  <p>Many robotic applications require finding the pose (rotation
+and translation) of an object in the scene. A nice tutorial can be
+found at
+<a href="http://pointclouds.org/documentation/tutorials/alignment_prerejective.php#alignment-prerejective">Correspondence Grouping</a>.
+It’s important to note that with different models and scene some parameter values might need to be adjusted. You <strong>should</strong> play around with them to see how they influence the final result.</p>
+</blockquote>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/blog/introduction-to-robot-vision/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+     <a href="https://www.facebook.com/sharer/sharer.php?u=/blog/introduction-to-robot-vision/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/blog/introduction-to-robot-vision/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Introduction to robot vision</strong> was published on <time datetime="2017-01-03T00:00:00+08:00">January 03, 2017</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/blog/Hand-eye-calibration/" title="Hand-eye calibration">Hand-eye calibration</a></li>
+    
+      <li><a href="/projects/ikea-assembly/" title="Robotic assembly of an ikea chair">Robotic assembly of an ikea chair</a></li>
+    
+      <li><a href="/projects/art-threading/" title="Plot a portrait using 1 single thread">Plot a portrait using 1 single thread</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2019 Huy Nguyen. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-119421919-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'huy-nguyen-github-io'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+</body>
+</html>

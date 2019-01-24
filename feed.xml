@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title type="text">Huy Nguyen</title>
+<generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
+<link rel="self" type="application/atom+xml" href="/feed.xml" />
+<link rel="alternate" type="text/html" href="" />
+<updated>2019-01-24T11:03:04+08:00</updated>
+<id>/</id>
+<author>
+  <name>Huy Nguyen</name>
+  <uri>/</uri>
+  <email>huy.nguyendinh09@gmail.com</email>
+</author>
+
+
+<entry>
+  <title type="html"><![CDATA[Hand-eye calibration]]></title>
+  <link rel="alternate" type="text/html" href="/blog/Hand-eye-calibration/" />
+  <id>/blog/Hand-eye calibration</id>
+  <published>2018-05-10T00:00:00+08:00</published>
+  <updated>2018-05-10T00:00:00+08:00</updated>
+  <author>
+    <name>Huy Nguyen</name>
+    <uri></uri>
+    <email>huy.nguyendinh09@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;h4 id=&quot;to-be-updated&quot;&gt;To be updated&lt;/h4&gt;
+
+&lt;p&gt;To relate the object pose
+estimation to the robot base frame, the problem of determining the
+transformation between the sensor and the end-effector is
+crucial. This problem is usually referred as hand-eye calibration
+problem and has long been an interesting topic which draws an
+extensive attention from many robotic researchers. Here we
+will show you how to formulate the hand-eye calibration problem as
+well as suggest some relevant approaches to solve it.&lt;/p&gt;
+
+&lt;!-- In this Chapter, we consider one of the most fundamental tasks of --&gt;
+&lt;!-- robot vision: *determining the position of the object relative to the --&gt;
+&lt;!-- robot*. --&gt;
+
+&lt;figure style=&quot;text-align: center;&quot;&gt;
+  &lt;img src=&quot;/images/denso-ensenso-object.png&quot; /&gt;
+  &lt;figcaption&gt;&quot;Fig.1 : A robot system with a camera mounted on the end-effector.&quot;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;!-- To have a better visualization of the problem, let us briefly consider --&gt;
+&lt;!-- a robotics system as depicted in Fig. 1. The relative --&gt;
+&lt;!-- transformation $_{b} T^{o}$ between the object --&gt;
+&lt;!-- and the robot base is determined as follows: --&gt;
+
+&lt;!-- Approaches and Implementations --&gt;
+&lt;!-- ============================================ --&gt;
+&lt;!-- As :math:`\bfX`, :math:`\bfA` and :math:`\bfB` represent rigid-body trans- formations, they live in --&gt;
+&lt;!-- :math:`\bfS \bfE(3)`, a subset of the space of 4×4 matrices endowed with a --&gt;
+&lt;!-- non-trivial Lie group structure, solving for :math:`\bfX` a difficult --&gt;
+&lt;!-- problem. As it will requires many advanced mathematics theories to solve --&gt;
+&lt;!-- this problem, we only list out some well-known articles for your reference. --&gt;
+
+&lt;!-- - Using the Euclidean Group: --&gt;
+
+&lt;!--   Park F. &amp; Martin B., *Robot Sensor Calibration: Solving AX = XB --&gt;
+&lt;!--   on the Euclidean Group*,  IEEE Transactions on Robotics and --&gt;
+&lt;!--   Automation, (10) 1994, p. 717–721, available at `robotics.snu.ac.kr &lt;http://robotics.snu.ac.kr/fcp/files/_pdf_files_publications/7_c/robot_sensor_calibration.pdf&gt;`_ --&gt;
+
+&lt;!-- - Using dual quaternions: --&gt;
+
+&lt;!--   Daniilidis K., *Hand-eye calibration using dual quaternions* --&gt;
+&lt;!--   Int. Journ. Robotics Res, 18: 286-298, 1999, available at --&gt;
+&lt;!--   `citeseerx.ist.psu.edu &lt;http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.18.366&amp;rep=rep1&amp;type=pdf&gt;`_ --&gt;
+
+&lt;!-- - Others: --&gt;
+
+&lt;!--   Strobl, K. H., &amp; Hirzinger, G. (2006, October), *Optimal hand-eye --&gt;
+&lt;!--   calibration*, In Intelligent Robots and Systems, 2006 IEEE/RSJ --&gt;
+&lt;!--   International Conference on (pp. 4647-4653),  available at --&gt;
+&lt;!--   `here &lt;http://ai2-s2-pdfs.s3.amazonaws.com/0646/aaa662a8e0b2a0a2bbcad938d68cd45102f7.pdf&gt;`_ --&gt;
+
+&lt;!-- Our open-source python implementation of F. Park, B. Martin's paper is available at . --&gt;
+
+&lt;blockquote&gt;
+  &lt;h1 id=&quot;exercises&quot;&gt;Exercises&lt;/h1&gt;
+  &lt;p&gt;&lt;strong&gt;Note that:&lt;/strong&gt; Sometimes the camera may not be mounted on the end-effector
+but on a fixed stand (the system in fig. 2 is a prime
+example). In this case the relative transformation between the camera
+and the robot base is required to relate the object pose estimation to
+the robot base frame. This problem can also be formulated as the :math:&lt;code&gt;\bfA\bfX = \bfX\bfB&lt;/code&gt;
+problem by commanding the robot moving a pattern mounted on its end
+effector while observing this pattern from the camera. (We let you do
+this as an exercise.)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- .. admonition:: Exercise --&gt;
+
+&lt;!--    Consider the system in fig. 2, formulate the problem of finding the --&gt;
+&lt;!--    relative transformation between the camera and the robot base as --&gt;
+&lt;!--    the :math:`\bfA\bfX = \bfX\bfB` problem. --&gt;
+
+&lt;!--    .. figure:: ../figures/robot_vision/ensenso-denso-fixed.png --&gt;
+&lt;!--       :width: 80% --&gt;
+&lt;!--       :alt: denso --&gt;
+&lt;!--       :align: center --&gt;
+
+&lt;!--       ..    --&gt;
+
+&lt;!-- 	 Fig. 2: A robot system where the camera is not mounted on the --&gt;
+&lt;!-- 	 end-effector but on a fixed stand. --&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/blog/Hand-eye-calibration/&quot;&gt;Hand-eye calibration&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on May 10, 2018.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Robotic assembly of an ikea chair]]></title>
+  <link rel="alternate" type="text/html" href="/projects/ikea-assembly/" />
+  <id>/projects/ikea-assembly</id>
+  <published>2018-04-20T00:00:00+08:00</published>
+  <updated>2018-04-20T00:00:00+08:00</updated>
+  <author>
+    <name>Huy Nguyen</name>
+    <uri></uri>
+    <email>huy.nguyendinh09@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;As an ordinary day, I opened the news app on my phone, went to the robotics news tab, and … this news is everywhere. The autonomous assembly of an IKEA chair was featured on many major international news pages, including &lt;a href=&quot;https://www.theguardian.com/science/2018/apr/18/defeated-by-ikeas-flatpack-call-in-the-robots&quot;&gt;The Guardian&lt;/a&gt;, &lt;a href=&quot;https://www.nytimes.com/2018/04/18/science/robots-ikea-furniture.html&quot;&gt;The New York Times&lt;/a&gt;, &lt;a href=&quot;https://www.economist.com/news/science-and-technology/21740733-cower-your-silicon-overlords-puny-humans-robots-can-assemble-ikea&quot;&gt;The Economist&lt;/a&gt;, &lt;a href=&quot;http://www.abc.net.au/news/science/2018-04-19/semi-autonomous-robot-assembles-ikea-chair-frame-artificial/9670464&quot;&gt;ABC News&lt;/a&gt;, &lt;a href=&quot;http://www.sciencemag.org/news/2018/04/can-robot-build-ikea-chair-faster-you&quot;&gt;Science&lt;/a&gt;, &lt;a href=&quot;https://www.nature.com/articles/d41586-018-04779-w&quot;&gt;Nature&lt;/a&gt;, &lt;a href=&quot;https://www.wired.com/story/a-robot-does-the-impossible-assembling-an-ikea-chair-without-having-a-meltdown/&quot;&gt;Wired&lt;/a&gt;, &lt;a href=&quot;https://www.technologyreview.com/the-download/610929/robots-are-about-as-good-as-you-at-assembling-ikea-furniture/&quot;&gt;MIT Technology Review&lt;/a&gt;, &lt;a href=&quot;https://www.youtube.com/watch?v=kq2nWNZEjj8&quot;&gt;CNN&lt;/a&gt;, &lt;a href=&quot;https://reuters.com/video/2018/04/19/flatpack-fear-no-more-robot-assembles-ik?videoId=419292893&amp;amp;videoChannel=1&quot;&gt;Reuters&lt;/a&gt;, etc.&lt;/p&gt;
+
+&lt;p&gt;It is an honor to be a part of this group. I was involved in doing the calibrations and 3D perceptions for the project.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Jec2Z3CkBGM&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/projects/ikea-assembly/&quot;&gt;Robotic assembly of an ikea chair&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on April 20, 2018.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Plot a portrait using 1 single thread]]></title>
+  <link rel="alternate" type="text/html" href="/projects/art-threading/" />
+  <id>/projects/art-threading</id>
+  <published>2018-01-12T00:00:00+08:00</published>
+  <updated>2018-01-12T00:00:00+08:00</updated>
+  <author>
+    <name>Huy Nguyen</name>
+    <uri></uri>
+    <email>huy.nguyendinh09@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;The project is inspired by &lt;a href=&quot;http://artof01.com/vrellis/works/knit.html&quot;&gt;petros vrellis&lt;/a&gt;’s work.&lt;/p&gt;
+
+&lt;p&gt;Long time ago I saw a video of this guy making stunning knitted portrait with a single thread. I think.. this definitely is another perfect blend of art and sciene (just like what we did with the &lt;a href=&quot;https://dinhhuy2109.github.io/projects/light-drawing/&quot;&gt;light drawing project&lt;/a&gt;). Therefore I decided to build the algorithm doing the same thing.&lt;/p&gt;
+
+&lt;p&gt;Note that to make these portraits, all you need is &lt;strong&gt;a long single thread, and a circle frame&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;And belows are the results. Can you recognize them?&lt;/p&gt;
+
+&lt;figure style=&quot;text-align: center; width: 250px;&quot;&gt;
+  &lt;img src=&quot;/images/celeb1.png&quot; /&gt;
+	&lt;img src=&quot;/images/celeb2.png&quot; /&gt;
+	&lt;img src=&quot;/images/celeb3.png&quot; /&gt;
+	&lt;img src=&quot;/images/myta.png &quot; /&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;These are just some rendered images of the final product. I will try to make a real one soon :)&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/projects/art-threading/&quot;&gt;Plot a portrait using 1 single thread&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on January 12, 2018.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[How to choose a good badminton racket?]]></title>
+  <link rel="alternate" type="text/html" href="/blog/badminton/" />
+  <id>/blog/badminton</id>
+  <published>2017-03-16T00:00:00+08:00</published>
+  <updated>2017-03-16T00:00:00+08:00</updated>
+  <author>
+    <name>Huy Nguyen</name>
+    <uri></uri>
+    <email>huy.nguyendinh09@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;The badminton racket is the most important equipment. Before you
+choose your own badminton racket, ask yourself whether you want to
+play a game of &lt;em&gt;POWER&lt;/em&gt; or &lt;em&gt;CONTROL&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;POWER&lt;/em&gt; means that you want to deliver &lt;em&gt;lethal&lt;/em&gt; smashes to win your
+ oponent, and &lt;em&gt;CONTROL&lt;/em&gt; means being able to drive the shuttlecock with
+ high precision. Remember that you can not have both power and control
+ in one racket. However, you can choose to have a balance of both.&lt;/p&gt;
+
+&lt;p&gt;To choose a good badminton racket that suits you, serval things to
+consider:&lt;/p&gt;
+
+&lt;h1 id=&quot;stiffnessflexibility-of-the-shaft&quot;&gt;Stiffness/Flexibility of the Shaft:&lt;/h1&gt;
+&lt;p&gt;A flexible shaft can bend easily, whereas a stiff shaft can hardly
+bend.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;A flexible shaft&lt;/strong&gt; offers good repulsion of the shuttlecock in a
+badminton swing. This is because a flexible shaft bends slightly
+towards the back and stores energy during your swing motion. As the
+shuttle comes into contact with the string bed of the racket, the
+stored energy will be released and then transferred to the
+shuttlecock. Therefore the holder of the racket does not have to exert
+too much strength for badminton shots such as badminton clears from
+baseline to baseline.&lt;/p&gt;
+
+&lt;p&gt;However, you will have to sacrifies shot placement accuracy. Since the
+shuttle lands on the string bed of the racket, repulsion will cause
+the head of the racket to vibrate, leading to uncertainty in the
+flight direction of the shuttlecock.&lt;/p&gt;
+
+&lt;p&gt;Therefore, this type of rackets is &lt;em&gt;most suitable for beginner or
+defensive players&lt;/em&gt;. Also racket with flexible shaft help you to &lt;em&gt;defend
+smashes easier&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;A Stiff Shaft&lt;/strong&gt; offers little or no repulsion.  The shuttle will
+  bounce off immediately after it comes into contact with the string
+  bed of the racket. With less repulsion, shots are less powerful. This
+  means that the holder of the badminton racket will have to swing
+  harder in order to generate more power.&lt;/p&gt;
+
+&lt;p&gt;However, this type of shaft is perfect for accurate shuttlecock
+placement and suitable for &lt;em&gt;Fast Attacks, Deceptions, Net kill&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you’re a beginner using a stiff badminton racket, you’ll find
+yourself concentrating on exerting sufficient strength into your
+swing, rather than concentrating on correct techniques. &lt;em&gt;Intermediate or advanced players&lt;/em&gt; who are very familiar with correct badminton techniques can consider switching to a stiff racket to try out more advanced skills.&lt;/p&gt;
+
+&lt;h1 id=&quot;balance-point--weight&quot;&gt;Balance Point &amp;amp; Weight&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Balance point&lt;/strong&gt; is the point on the badminton shaft that indicates the CENTER of
+MASS of the badminton racket.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Weight&lt;/strong&gt; of the racket ussually is classified into a few categories,
+namely:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;-2U&lt;/em&gt;: 90-94g&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;-3U&lt;/em&gt;: 85-89g&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;-4U&lt;/em&gt;: 80-84g&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;-5U&lt;/em&gt;: 75-79g&lt;/p&gt;
+
+&lt;p&gt;These infomations are often indicated on the shaft of the racket (near
+ where you hold the racket).&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Head-heavy rackets&lt;/em&gt;  and &lt;em&gt;heavy rackets&lt;/em&gt; will allow you to channel
+more power into your smashes. However, they are not as easy to control
+due to the extra weight.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Head-light rackets&lt;/em&gt; and &lt;em&gt;lighweight rackets&lt;/em&gt; on the oposite will
+allow for quick stroking speeds and recovery. You will be able to
+deliver quick serves and switch to different strokes
+easily. Lightweight rackets also are easier on the wrist and
+shoulders, reducing the chances of injuries.&lt;/p&gt;
+
+&lt;h1 id=&quot;and-more&quot;&gt;And more&lt;/h1&gt;
+&lt;p&gt;This is not all! You still need to choose suitable &lt;strong&gt;type of string&lt;/strong&gt;,
+&lt;strong&gt;string tension&lt;/strong&gt; and &lt;strong&gt;hand grip&lt;/strong&gt;, but above are some of the most
+important things that I usually consider before buying a new
+racket. And of course, the racket need to fit your budget. :)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Please note that, this sharing section is gathered/copied from many online sources
+with the &lt;strong&gt;only purpose&lt;/strong&gt; of helping my friends choose a good
+badminton racket. Therefore it can be a copyright violation.&lt;/em&gt;&lt;/p&gt;
+
+&lt;figure style=&quot;text-align: center;&quot;&gt;
+  &lt;img src=&quot;/images/olympicicon.png&quot; /&gt;
+  &lt;figcaption&gt;&quot;Fig.: Rio 2016 Badminton Olympics&quot;&lt;/figcaption&gt;
+  &lt;/figure&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/blog/badminton/&quot;&gt;How to choose a good badminton racket?&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on March 16, 2017.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Basic techniques for badminton players]]></title>
+  <link rel="alternate" type="text/html" href="/blog/badminton-basic-techniques/" />
+  <id>/blog/badminton-basic-techniques</id>
+  <published>2017-03-16T00:00:00+08:00</published>
+  <updated>2017-03-16T00:00:00+08:00</updated>
+  <author>
+    <name>Huy Nguyen</name>
+    <uri></uri>
+    <email>huy.nguyendinh09@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;In this post, I list out  some basic techniques that are commonly required
+when playing badminton:&lt;/p&gt;
+
+&lt;h3 id=&quot;brief-introduction&quot;&gt;Brief introduction&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;Grip in Badminton&lt;/li&gt;
+  &lt;li&gt;Serve&lt;/li&gt;
+  &lt;li&gt;Clear shot&lt;/li&gt;
+  &lt;li&gt;Drop shot&lt;/li&gt;
+  &lt;li&gt;Smash shot&lt;/li&gt;
+  &lt;li&gt;Drive shot&lt;/li&gt;
+  &lt;li&gt;Lifting shot&lt;/li&gt;
+  &lt;li&gt;Net shot&lt;/li&gt;
+  &lt;li&gt;Backhand shot&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/SF8G--iZN4U?rel=0&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h3 id=&quot;indeep-tutorials&quot;&gt;Indeep tutorials:&lt;/h3&gt;
+
+&lt;p&gt;Note the foot steps, hand and body poses:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Lifting defense&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=fKVPgwdTnS0&quot;&gt;https://www.youtube.com/watch?v=fKVPgwdTnS0&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Serve&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Backhand clear&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-9B2XtqICFw&quot;&gt;https://www.youtube.com/watch?v=-9B2XtqICFw&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Net skills (net lift+ net shot + net
+kill) &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=PsiWxdTgXaM&quot;&gt;https://www.youtube.com/watch?v=PsiWxdTgXaM&lt;/a&gt;
+&lt;a href=&quot;https://www.youtube.com/watch?v=6uj7UoR7YJ8&quot;&gt;https://www.youtube.com/watch?v=6uj7UoR7YJ8&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Forehand + backhand drive&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=e826uzJ7gYg&quot;&gt;https://www.youtube.com/watch?v=e826uzJ7gYg&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;posisitoning-in-doubles&quot;&gt;Posisitoning in doubles&lt;/h3&gt;
+&lt;p&gt;Positioning is extremely important in doubles. Watch the following
+video and practise these moves with your partner.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/XMYbU08AOaw?rel=0&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;em&gt;Please note that, this sharing section is gathered/copied from many online sources.&lt;/em&gt;&lt;/p&gt;
+
+&lt;figure style=&quot;text-align: center;&quot;&gt;
+  &lt;img src=&quot;/images/olympicicon.png&quot; /&gt;
+  &lt;figcaption&gt;&quot;Fig.: Rio 2016 Badminton Olympics&quot;&lt;/figcaption&gt;
+  &lt;/figure&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/blog/badminton-basic-techniques/&quot;&gt;Basic techniques for badminton players&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on March 16, 2017.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Our website for a free course on Open-Source Robotics has been deployed]]></title>
+  <link rel="alternate" type="text/html" href="/projects/osrobotics/" />
+  <id>/projects/osrobotics</id>
+  <published>2017-03-15T00:00:00+08:00</published>
+  <updated>2017-03-15T00:00:00+08:00</updated>
+  <author>
+    <name>Huy Nguyen</name>
+    <uri></uri>
+    <email>huy.nguyendinh09@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;We introduce a self-learning robotics course online at
+&lt;strong&gt;&lt;a href=&quot;http://osrobotics.org/pages/introduction_osr.html&quot;&gt;http://osrobotics.org/pages/introduction_osr.html&lt;/a&gt;&lt;/strong&gt;. The
+course is aimed at anyone who has a general interest in robots and now
+wishes to learn more about robotics. We hope you’ll find the course
+entertaining, informative and worthwhile!&lt;/p&gt;
+
+&lt;p&gt;The topics range from &lt;em&gt;Manipulator kinematics, Motion planning, Robot
+vision, System integration, Force control, etc.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;You may also find
+installation and start-up guides for some useful softwares &lt;em&gt;(e.g. Ubuntu,
+Python, Git, OpenRave, OpenCV, PCL, ROS, Gazebo)&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Cheers,&lt;/p&gt;
+
+&lt;figure style=&quot;width: 100%; text-align: center;&quot;&gt;
+	&lt;img src=&quot;/images/workingtabletopview.jpg&quot; /&gt;
+	&lt;figcaption&gt;Image designed
+by &lt;a href=&quot;http://www.freepik.com/free-vector/workplace-in-top-view_788440.htm&quot;&gt;Freepik&lt;/a&gt; &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;/projects/osrobotics/&quot;&gt;Our website for a free course on Open-Source Robotics has been deployed&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on March 15, 2017.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Introduction to robot vision]]></title>
+  <link rel="alternate" type="text/html" href="/blog/introduction-to-robot-vision/" />
+  <id>/blog/introduction-to-robot-vision</id>
+  <published>2017-01-03T00:00:00+08:00</published>
+  <updated>2017-01-03T00:00:00+08:00</updated>
+  <author>
+    <name>Huy Nguyen</name>
+    <uri></uri>
+    <email>huy.nguyendinh09@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;h3 id=&quot;i-introduction&quot;&gt;I-Introduction:&lt;/h3&gt;
+
+&lt;p&gt;The purpose of robot vision is to locate the robot with respect to its
+external environment so that it can safely and efficiently perform its
+intended tasks. In mobile robotics, the external environment consists
+of the robot’s destination, routes, obstacles, etc. Knowing its
+position and orientation with respect to these elements enables the
+robot to safely navigate towards its destination.&lt;/p&gt;
+
+&lt;p&gt;In industrial settings, the external environment mainly consists of
+obstacles and workpieces: parts to be assembled, panels to be drilled
+on, products to be inspected, etc. The objective of this Chapter is to
+present the algorithms and software tools to determine precisely the
+location of workpieces with respect to the robot, which will next
+enable the robot to perform its intended task–assembly, drilling,
+inspection, etc.&lt;/p&gt;
+
+&lt;figure style=&quot;text-align: center;&quot;&gt;
+  &lt;img src=&quot;/images/denso-ensenso-object.png&quot; /&gt;
+  &lt;figcaption&gt;&quot;Fig.: Locating a workpiece with respect to the camera and to the
+robot.&quot;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;There are two main types of visual data: 2D (images) and 3D (point
+clouds). Section 2D vision presents basic algorithms, such as
+filtering or feature detection, and associated software tools to deal
+with 2D images. Section 3D vision introduces algorithms for object location
+using a 3D camera.&lt;/p&gt;
+
+&lt;h3 id=&quot;ii-object-pose-estimation-from-2d-images&quot;&gt;II-Object pose estimation from 2D images:&lt;/h3&gt;
+&lt;p&gt;Since there is already an &lt;a href=&quot;http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_tutorials.html&quot;&gt;excellent OpenCV tutorial&lt;/a&gt;,
+we shall not duplicate the effort here. The reader is advised to go
+through the whole tutorial, with particular attention to the following
+sections:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_imgproc/py_canny/py_canny.html#canny&quot;&gt;Canny edge detection&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_table_of_contents_contours/py_table_of_contents_contours.html#table-of-content-contours&quot;&gt;Contours&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html#hough-lines&quot;&gt;Hough line transform&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_table_of_contents_feature2d/py_table_of_contents_feature2d.html#py-table-of-content-feature2d&quot;&gt;Feature detection and description&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We shall see now, through an example, how OpenCV can be used in a
+robotics setting.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h4 id=&quot;example-finding-the-3d-position-of-a-hole-using-stereo-vision&quot;&gt;Example: Finding the 3D position of a hole using stereo vision&lt;/h4&gt;
+  &lt;p&gt;Many robotic applications, such as assembly or riveting, require
+finding the 3D positions of circular holes. Fig. 26  shows a scene
+as captured by a stereo camera. This example demonstrates how to find the
+coordinates of the hole in the 2D images and how to subsequently
+determine its 3D position.&lt;/p&gt;
+  &lt;figure style=&quot;text-align: center;&quot;&gt;
+ &lt;img src=&quot;/images/stereo_image.png&quot; /&gt;
+ &lt;figcaption&gt;&quot;Fig.: Scene captured by a stereo camera (left and right views).&quot;&lt;/figcaption&gt;
+&lt;/figure&gt;
+  &lt;p&gt;First, make sure that you have installed
+&lt;a href=&quot;../installation/vision.md#installation&quot;&gt;OpenCV&lt;/a&gt;.
+Define the function that finds the center of a hole in an image&lt;/p&gt;
+
+  &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;import numpy as np
+import cv2
+def get_hole_center2d(image):
+	image_blur = cv2.blur(image, (5,5))
+	image_edges = cv2.Canny(image_blur, 60, 120)
+	(thresh, image_bw) = cv2.threshold(image_edges, 80, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+	if image_bw is None:
+		return False, None
+	image_contours, contours, hierarchy = cv2.findContours(image_bw, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+	image_contours = cv2.cvtColor(image_contours, cv2.COLOR_GRAY2RGB)
+	for i,cnt in enumerate(contours):
+		if len(np.squeeze(cnt)) &amp;gt; 5:
+			rect = np.array(cv2.minAreaRect(cnt))
+			(delta_u, delta_v) = rect[1]
+			diameter_pixel = max(delta_u,delta_v)
+			circularity = delta_u/delta_v if delta_v &amp;gt; delta_u  else delta_v/delta_u
+			good_circularity = circularity &amp;gt; 0.8
+			good_diameter = diameter_pixel &amp;gt; 30
+			if good_circularity and good_diameter:
+				cv2.drawContours(image_contours, [cnt], 0, [0,0,255], 2)
+				cv2.imwrite('image_contours.png',image_contours)
+				return True, rect
+	return False, False
+limage = cv2.imread('left_image.png', 0)
+success, lres = get_hole_center2d(limage)
+rimage = cv2.imread('right_image.png', 0)
+success, rres = get_hole_center2d(rimage)
+&lt;/code&gt;&lt;/pre&gt;
+
+  &lt;figure style=&quot;text-align: center;&quot;&gt;
+  &lt;img src=&quot;/images/image_contours.png&quot; /&gt;
+  &lt;figcaption&gt;&quot;Fig.: The hole contour is detected in the right image.&quot;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+  &lt;p&gt;Once the hole positions in the left and right camera views have been
+detected, one can use the camera information to reconstruct the 3D
+position by stereo vision. The theory for stereo vision can be found
+&lt;a href=&quot;http://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+  &lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# Load camera info from yaml files
+import yaml
+left_calib_data = yaml.load( open(&quot;left_camera_info.yaml&quot;, &quot;r&quot;))
+left_cam_matrix = left_calib_data[&quot;P&quot;] 
+right_calib_data = yaml.load( open(&quot;right_camera_info.yaml&quot;, &quot;r&quot;))
+right_cam_matrix = right_calib_data[&quot;P&quot;] 
+# Compute projection matrix Q
+Tx = right_cam_matrix[3]
+fx = right_cam_matrix[0]
+B = (-Tx / fx)
+lCx = left_cam_matrix[2]
+lCy = left_cam_matrix[6]
+rCx = right_cam_matrix[2]
+rCy = right_cam_matrix[6]
+Q = np.zeros((4,4))
+Q[3,2] = 1./B
+Q[0,3] = -lCx
+Q[1,3] = -lCy
+Q[2,3] = fx
+Q[3,3] = (rCx-lCx)/B
+# Reproject pixel point into 3D coordinates
+lhcenter = lres[0]
+rhcenter = rres[0]
+disparity = lhcenter[0] - rhcenter[0]
+XYZ = np.dot(Q, np.array([lhcenter[0], lhcenter[1], disparity, 1]))
+XYZ /= XYZ[-1]
+print &quot;3D coordinates of the hole: &quot;, XYZ[:3]
+&lt;/code&gt;&lt;/pre&gt;
+
+  &lt;p&gt;3D coordinates of the hole:  [-0.22933565 -0.2300843   0.64514768]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;iii-processing-3d-point-clouds-using-pcl&quot;&gt;III-Processing 3D point clouds using PCL&lt;/h3&gt;
+
+&lt;p&gt;Contrary to conventional 2D cameras, which provide 2D images of the
+world, 3D cameras provide 3D information in the form of point
+clouds. A point cloud is a collection of points described by their
+X-Y-Z coordinates.&lt;/p&gt;
+
+&lt;p&gt;PCL is a good library that provides a number of functionalities to
+manipulate point clouds. Unfortunately, contrary to OpenCV, the Python
+bindings to PCL are very limited. This tutorial will therefore deal
+with the C++ library.&lt;/p&gt;
+
+&lt;p&gt;Since there is already an &lt;a href=&quot;http://pointclouds.org/documentation/tutorials/&quot;&gt;excellent PCL tutorial&lt;/a&gt;, we shall not
+duplicate the effort here. The reader is advised to go through the
+whole tutorial, with particular attention to the following
+sections:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://pointclouds.org/documentation/tutorials/#basic-usage&quot;&gt;Basic usage&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://pointclouds.org/documentation/tutorials/#i-o&quot;&gt;I/O&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://pointclouds.org/documentation/tutorials/#filtering-tutorial&quot;&gt;Filtering&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://pointclouds.org/documentation/tutorials/#features-tutorial&quot;&gt;Features&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://pointclouds.org/documentation/tutorials/#recognition-tutorial&quot;&gt;Recoginition&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://pointclouds.org/documentation/tutorials/#registration-tutorial&quot;&gt;Registration&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We shall see now, through an example, how PCL can be
+used in a robotics setting.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h4 id=&quot;exampleobject-pose-estimation-in-pcl&quot;&gt;Example::Object pose estimation in PCL&lt;/h4&gt;
+  &lt;p&gt;Many robotic applications require finding the pose (rotation
+and translation) of an object in the scene. A nice tutorial can be
+found at
+&lt;a href=&quot;http://pointclouds.org/documentation/tutorials/alignment_prerejective.php#alignment-prerejective&quot;&gt;Correspondence Grouping&lt;/a&gt;.
+It’s important to note that with different models and scene some parameter values might need to be adjusted. You &lt;strong&gt;should&lt;/strong&gt; play around with them to see how they influence the final result.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/blog/introduction-to-robot-vision/&quot;&gt;Introduction to robot vision&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on January 03, 2017.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Robotics Workstation Setup in Ubuntu 16.04 (Xenial)]]></title>
+  <link rel="alternate" type="text/html" href="/blog/Ubuntu-1604-xenial-installation/" />
+  <id>/blog/Ubuntu-1604-xenial-installation</id>
+  <published>2016-08-19T00:00:00+08:00</published>
+  <updated>2016-08-19T00:00:00+08:00</updated>
+  <author>
+    <name>Huy Nguyen</name>
+    <uri></uri>
+    <email>huy.nguyendinh09@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;&lt;strong&gt;Last update:&lt;/strong&gt; August 18, 2016&lt;/p&gt;
+
+&lt;p&gt;These instructions are for setting up your robotics workstation in &lt;strong&gt;Ubuntu 16.04 (Xenial)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;ubuntu-1604&quot;&gt;Ubuntu 16.04&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Install with USB: Pls download Ubuntu 16.04 via this link
+&lt;a href=&quot;http://www.ubuntu.com/download/desktop&quot;&gt;http://www.ubuntu.com/download/desktop&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;To create a bootable usb stick from which you can install Ubuntu:
+&lt;a href=&quot;http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu&quot;&gt;http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Finally, plug your USB stick in and follow &lt;a href=&quot;http://www.ubuntu.com/download/desktop/install-ubuntu-desktop&quot;&gt;http://www.ubuntu.com/download/desktop/install-ubuntu-desktop&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;some-useful-tools-in-ubuntu&quot;&gt;Some useful tools in Ubuntu&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Chrome (officially available from google)&lt;/li&gt;
+  &lt;li&gt;Unity tweak&lt;/li&gt;
+  &lt;li&gt;Check out &lt;a href=&quot;http://155.69.128.142/mediawiki/index.php/Recommended_tools&quot;&gt;this&lt;/a&gt; for Emacs, Python, Git&lt;/li&gt;
+  &lt;li&gt;Smart git ( go to smart git website, download .deb file)&lt;/li&gt;
+  &lt;li&gt;Terminator (From ubuntu software center)&lt;/li&gt;
+  &lt;li&gt;openssh server&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ros-and-openrave&quot;&gt;ROS and Openrave&lt;/h3&gt;
+
+&lt;p&gt;For installing ROS and Openrave, please refer to the following &lt;a href=&quot;http://fsuarez6.github.io/blog/workstation-setup-xenial/&quot;&gt;page&lt;/a&gt;&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;/blog/Ubuntu-1604-xenial-installation/&quot;&gt;Robotics Workstation Setup in Ubuntu 16.04 (Xenial)&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on August 19, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[We won 2nd place at Airbus Shopfloor Challenge @ICRA2016]]></title>
+  <link rel="alternate" type="text/html" href="/projects/airbus-shoopfloor-challenge-at-ICRA/" />
+  <id>/projects/airbus-shoopfloor-challenge-at-ICRA</id>
+  <published>2016-05-25T00:00:00+08:00</published>
+  <updated>2016-05-25T00:00:00+08:00</updated>
+  <author>
+    <name>Huy Nguyen</name>
+    <uri></uri>
+    <email>huy.nguyendinh09@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;h3 id=&quot;may-2016&quot;&gt;May 2016&lt;/h3&gt;
+
+&lt;p&gt;Our research group participated in Airbus Shopfloor Challenge which was held at IEEE International Conference on Robotics and Automation (ICRA) 15-21 May 2016 in Stockholm, Sweden.&lt;/p&gt;
+
+&lt;p&gt;Many tasks in an aircraft assembly line involve drilling. At Airbus, million of holes are needed to be drilled every year, by human operators. This motivates the company to look for automated solutions for drilling process. A competing team needed to build a light-weighted robot system (weighing less than 100 kg.) able to perform drilling tasks with a stringent accuracy requirement. In particular, a competing robot needed to drill a given pattern of 255 holes on a 70 cm. x 70 cm. aluminium plate.&lt;/p&gt;
+
+&lt;p&gt;Our solution consisted of a 6-DOF Denso VS-060 arm equipped with an industrial ENSENSO camera and a drill at the end-effector. Simulations in a virtual environment were done using OpenRAVE. We used ROS for system integration and real-time communication with the robot.&lt;/p&gt;
+
+&lt;p&gt;I was in charge of sensor, robot calibrations and perception for the system. The calibration tasks includes the tool (drill bit) calibration, camera calibration and hand-eye calibration. The perception tasks were to locate the aluminium plate (with respect to 3 small reference holes on the plate). Following the aircaft manufacturing standard, this challenge has a very high accuracy requirement; therefore, calibration and perception are really crucial. We developed new tool-base calibration method that allows us to perform quickly the calibration with high accuracy. During this time, we also came up with the new approach for hand-eye calibration [paper]. The perception solution is a combination of 3D (pointcloud) an 2D (image) processing.&lt;/p&gt;
+
+&lt;p&gt;Our team finished at second! You can find the coverage on the &lt;a href=&quot;http://company.airbus.com/careers/Working-for-Airbus/Airbus-Shopfloor-Challenge-2016.html&quot;&gt;Airbus website&lt;/a&gt;, &lt;a href=&quot;http://robohub.org/airbus-shopfloor-challenge-overview-with-video/&quot;&gt;Robohub&lt;/a&gt;, &lt;a href=&quot;http://www.mae.ntu.edu.sg/NewsnEvents/Pages/Detailed-Page.aspx?news=9719917d-4ffb-40ac-aaf6-897f5ed58a93&quot;&gt;NTU MAE website&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Bonus: We had 3 months to build up our system (since we decided to join the challenge). We did work really hard. And we did learn a lot from the challenge! Such a great experience!&lt;/p&gt;
+
+&lt;figure style=&quot;text-align: center&quot;&gt;
+  &lt;img src=&quot;/images/airbus_challenge.jpg&quot; /&gt;
+  &lt;figcaption&gt;Fig.1: Our team with the robot. We drilled the group name onto the plate to showcase our abilies to airbus for the first round.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/FUmx7c8P-gs?start=179&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;figcaption style=&quot;text-align: center&quot;&gt;Vid.1: Interview at the live competition&lt;/figcaption&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/projects/airbus-shoopfloor-challenge-at-ICRA/&quot;&gt;We won 2nd place at Airbus Shopfloor Challenge @ICRA2016&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on May 25, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[When robotic and art unite]]></title>
+  <link rel="alternate" type="text/html" href="/projects/light-drawing/" />
+  <id>/projects/light-drawing</id>
+  <published>2016-03-26T00:00:00+08:00</published>
+  <updated>2016-03-26T00:00:00+08:00</updated>
+  <author>
+    <name>Huy Nguyen</name>
+    <uri></uri>
+    <email>huy.nguyendinh09@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Sometimes, I asked myself: “What do I do if I’m bored out of my skull at work?”. It gave me a pause, to think about what should I do then. And an answer jumped out of my mind: “Just find things to entertain yourself. Keep your mind busy.”.&lt;/p&gt;
+
+&lt;p&gt;Oneday, my prof’s friend visited our lab. She’s an artist, looking for a coorperation between robotic and art labs. So we came up with the idea of letting a robot do art works.&lt;/p&gt;
+
+&lt;p&gt;And light-drawing was a perfect test for this idea.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Light_painting&quot;&gt;Light painting&lt;/a&gt;, or light drawing, is a photographic technique in which exposures are made by moving a hand-held light source while taking a long exposure photograph, either to illuminate a subject or to shine a point of light directly at the camera, or by moving the camera itself during exposure.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Here, we employed a robotic arm to redraw some continuous-line-drawings taken from the internet. We first needed to convert those drawings into paths which included many points in 3d coordinates. Then these data were imported into the system and we simply commanded the robot to follow these paths.&lt;/p&gt;
+
+&lt;p&gt;With the skills and system that we already had, it took us just 2 nights to come up with the first demo.&lt;/p&gt;
+
+&lt;p&gt;And the results look really amazing…&lt;/p&gt;
+
+&lt;figure style=&quot;text-align: center;&quot;&gt;
+  &lt;img src=&quot;/images/face_drawing.jpeg&quot; /&gt;
+	&lt;img src=&quot;/images/dancer_drawing.jpeg&quot; /&gt;
+	&lt;img src=&quot;/images/text_drawing.jpeg&quot; /&gt;
+	&lt;img src=&quot;/images/bunny_drawing.jpeg&quot; /&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/projects/light-drawing/&quot;&gt;When robotic and art unite&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on March 26, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Calculate time left]]></title>
+  <link rel="alternate" type="text/html" href="/blog/test/" />
+  <id>/blog/test</id>
+  <published>2016-01-01T00:00:00+08:00</published>
+  <updated>2016-01-01T00:00:00+08:00</updated>
+  <author>
+    <name>Huy Nguyen</name>
+    <uri></uri>
+    <email>huy.nguyendinh09@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;h3 id=&quot;user-guide&quot;&gt;User guide:&lt;/h3&gt;
+&lt;p&gt;Click the Files icon, &lt;strong&gt;drag your file into the
+folder&lt;/strong&gt;. Then click Run and see the result at the black frame.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note&lt;/em&gt;: Your files must be named as &lt;strong&gt;dd-mm.csv&lt;/strong&gt; e.g. 10-Oct.csv&lt;/p&gt;
+
+&lt;figure style=&quot;text-align: center&quot;&gt;
+  &lt;img src=&quot;/images/intro.png&quot; /&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;interaction-frame&quot;&gt;Interaction frame:&lt;/h3&gt;
+&lt;h4 id=&quot;check-status-of-a-particular-day&quot;&gt;Check status of a particular day&lt;/h4&gt;
+&lt;iframe height=&quot;400px&quot; width=&quot;100%&quot; src=&quot;https://repl.it/@huynguyendinh/Time-management?lite=true&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; sandbox=&quot;allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals&quot;&gt;&lt;/iframe&gt;
+&lt;h4 id=&quot;check-status-of-a-period-of-time&quot;&gt;Check status of a period of time&lt;/h4&gt;
+&lt;iframe height=&quot;400px&quot; width=&quot;100%&quot; src=&quot;https://repl.it/@huynguyendinh/CheckForPeriodOfTime?lite=true&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; sandbox=&quot;allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals&quot;&gt;&lt;/iframe&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/blog/test/&quot;&gt;Calculate time left&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on January 01, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+</feed>
