@@ -2,26 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Huy Nguyen</title>
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="/feed.xml" />
-<link rel="alternate" type="text/html" href="" />
-<updated>2019-01-24T11:07:45+08:00</updated>
-<id>/</id>
+<link rel="self" type="application/atom+xml" href="http://localhost:5000/feed.xml" />
+<link rel="alternate" type="text/html" href="http://localhost:5000" />
+<updated>2019-01-24T11:16:09+08:00</updated>
+<id>http://localhost:5000/</id>
 <author>
   <name>Huy Nguyen</name>
-  <uri>/</uri>
+  <uri>http://localhost:5000/</uri>
   <email>huy.nguyendinh09@gmail.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[Hand-eye calibration]]></title>
-  <link rel="alternate" type="text/html" href="/blog/Hand-eye-calibration/" />
-  <id>/blog/Hand-eye calibration</id>
+  <link rel="alternate" type="text/html" href="http://localhost:5000/blog/Hand-eye-calibration/" />
+  <id>http://localhost:5000/blog/Hand-eye calibration</id>
   <published>2018-05-10T00:00:00+08:00</published>
   <updated>2018-05-10T00:00:00+08:00</updated>
   <author>
     <name>Huy Nguyen</name>
-    <uri></uri>
+    <uri>http://localhost:5000</uri>
     <email>huy.nguyendinh09@gmail.com</email>
   </author>
   <content type="html">
@@ -41,7 +41,7 @@ well as suggest some relevant approaches to solve it.&lt;/p&gt;
 &lt;!-- robot*. --&gt;
 
 &lt;figure style=&quot;text-align: center;&quot;&gt;
-  &lt;img src=&quot;/images/denso-ensenso-object.png&quot; /&gt;
+  &lt;img src=&quot;http://localhost:5000/images/denso-ensenso-object.png&quot; /&gt;
   &lt;figcaption&gt;&quot;Fig.1 : A robot system with a camera mounted on the end-effector.&quot;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -107,20 +107,20 @@ this as an exercise.)&lt;/p&gt;
 &lt;!-- 	 Fig. 2: A robot system where the camera is not mounted on the --&gt;
 &lt;!-- 	 end-effector but on a fixed stand. --&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/blog/Hand-eye-calibration/&quot;&gt;Hand-eye calibration&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on May 10, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:5000/blog/Hand-eye-calibration/&quot;&gt;Hand-eye calibration&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;http://localhost:5000&quot;&gt;Huy Nguyen&lt;/a&gt; on May 10, 2018.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Robotic assembly of an ikea chair]]></title>
-  <link rel="alternate" type="text/html" href="/projects/ikea-assembly/" />
-  <id>/projects/ikea-assembly</id>
+  <link rel="alternate" type="text/html" href="http://localhost:5000/projects/ikea-assembly/" />
+  <id>http://localhost:5000/projects/ikea-assembly</id>
   <published>2018-04-20T00:00:00+08:00</published>
   <updated>2018-04-20T00:00:00+08:00</updated>
   <author>
     <name>Huy Nguyen</name>
-    <uri></uri>
+    <uri>http://localhost:5000</uri>
     <email>huy.nguyendinh09@gmail.com</email>
   </author>
   <content type="html">
@@ -130,20 +130,20 @@ this as an exercise.)&lt;/p&gt;
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Jec2Z3CkBGM&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/projects/ikea-assembly/&quot;&gt;Robotic assembly of an ikea chair&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on April 20, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:5000/projects/ikea-assembly/&quot;&gt;Robotic assembly of an ikea chair&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;http://localhost:5000&quot;&gt;Huy Nguyen&lt;/a&gt; on April 20, 2018.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Plot a portrait using 1 single thread]]></title>
-  <link rel="alternate" type="text/html" href="/projects/art-threading/" />
-  <id>/projects/art-threading</id>
+  <link rel="alternate" type="text/html" href="http://localhost:5000/projects/art-threading/" />
+  <id>http://localhost:5000/projects/art-threading</id>
   <published>2018-01-12T00:00:00+08:00</published>
   <updated>2018-01-12T00:00:00+08:00</updated>
   <author>
     <name>Huy Nguyen</name>
-    <uri></uri>
+    <uri>http://localhost:5000</uri>
     <email>huy.nguyendinh09@gmail.com</email>
   </author>
   <content type="html">
@@ -156,29 +156,29 @@ this as an exercise.)&lt;/p&gt;
 &lt;p&gt;And belows are the results. Can you recognize them?&lt;/p&gt;
 
 &lt;figure style=&quot;text-align: center; width: 250px;&quot;&gt;
-  &lt;img src=&quot;/images/celeb1.png&quot; /&gt;
-	&lt;img src=&quot;/images/celeb2.png&quot; /&gt;
-	&lt;img src=&quot;/images/celeb3.png&quot; /&gt;
-	&lt;img src=&quot;/images/myta.png &quot; /&gt;
+  &lt;img src=&quot;http://localhost:5000/images/celeb1.png&quot; /&gt;
+	&lt;img src=&quot;http://localhost:5000/images/celeb2.png&quot; /&gt;
+	&lt;img src=&quot;http://localhost:5000/images/celeb3.png&quot; /&gt;
+	&lt;img src=&quot;http://localhost:5000/images/myta.png &quot; /&gt;
   &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;These are just some rendered images of the final product. I will try to make a real one soon :)&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/projects/art-threading/&quot;&gt;Plot a portrait using 1 single thread&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on January 12, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:5000/projects/art-threading/&quot;&gt;Plot a portrait using 1 single thread&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;http://localhost:5000&quot;&gt;Huy Nguyen&lt;/a&gt; on January 12, 2018.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[How to choose a good badminton racket?]]></title>
-  <link rel="alternate" type="text/html" href="/blog/badminton/" />
-  <id>/blog/badminton</id>
+  <link rel="alternate" type="text/html" href="http://localhost:5000/blog/badminton/" />
+  <id>http://localhost:5000/blog/badminton</id>
   <published>2017-03-16T00:00:00+08:00</published>
   <updated>2017-03-16T00:00:00+08:00</updated>
   <author>
     <name>Huy Nguyen</name>
-    <uri></uri>
+    <uri>http://localhost:5000</uri>
     <email>huy.nguyendinh09@gmail.com</email>
   </author>
   <content type="html">
@@ -269,24 +269,24 @@ with the &lt;strong&gt;only purpose&lt;/strong&gt; of helping my friends choose 
 badminton racket. Therefore it can be a copyright violation.&lt;/em&gt;&lt;/p&gt;
 
 &lt;figure style=&quot;text-align: center;&quot;&gt;
-  &lt;img src=&quot;/images/olympicicon.png&quot; /&gt;
+  &lt;img src=&quot;http://localhost:5000/images/olympicicon.png&quot; /&gt;
   &lt;figcaption&gt;&quot;Fig.: Rio 2016 Badminton Olympics&quot;&lt;/figcaption&gt;
   &lt;/figure&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/blog/badminton/&quot;&gt;How to choose a good badminton racket?&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on March 16, 2017.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:5000/blog/badminton/&quot;&gt;How to choose a good badminton racket?&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;http://localhost:5000&quot;&gt;Huy Nguyen&lt;/a&gt; on March 16, 2017.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Basic techniques for badminton players]]></title>
-  <link rel="alternate" type="text/html" href="/blog/badminton-basic-techniques/" />
-  <id>/blog/badminton-basic-techniques</id>
+  <link rel="alternate" type="text/html" href="http://localhost:5000/blog/badminton-basic-techniques/" />
+  <id>http://localhost:5000/blog/badminton-basic-techniques</id>
   <published>2017-03-16T00:00:00+08:00</published>
   <updated>2017-03-16T00:00:00+08:00</updated>
   <author>
     <name>Huy Nguyen</name>
-    <uri></uri>
+    <uri>http://localhost:5000</uri>
     <email>huy.nguyendinh09@gmail.com</email>
   </author>
   <content type="html">
@@ -352,24 +352,24 @@ video and practise these moves with your partner.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Please note that, this sharing section is gathered/copied from many online sources.&lt;/em&gt;&lt;/p&gt;
 
 &lt;figure style=&quot;text-align: center;&quot;&gt;
-  &lt;img src=&quot;/images/olympicicon.png&quot; /&gt;
+  &lt;img src=&quot;http://localhost:5000/images/olympicicon.png&quot; /&gt;
   &lt;figcaption&gt;&quot;Fig.: Rio 2016 Badminton Olympics&quot;&lt;/figcaption&gt;
   &lt;/figure&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/blog/badminton-basic-techniques/&quot;&gt;Basic techniques for badminton players&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on March 16, 2017.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:5000/blog/badminton-basic-techniques/&quot;&gt;Basic techniques for badminton players&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;http://localhost:5000&quot;&gt;Huy Nguyen&lt;/a&gt; on March 16, 2017.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Our website for a free course on Open-Source Robotics has been deployed]]></title>
-  <link rel="alternate" type="text/html" href="/projects/osrobotics/" />
-  <id>/projects/osrobotics</id>
+  <link rel="alternate" type="text/html" href="http://localhost:5000/projects/osrobotics/" />
+  <id>http://localhost:5000/projects/osrobotics</id>
   <published>2017-03-15T00:00:00+08:00</published>
   <updated>2017-03-15T00:00:00+08:00</updated>
   <author>
     <name>Huy Nguyen</name>
-    <uri></uri>
+    <uri>http://localhost:5000</uri>
     <email>huy.nguyendinh09@gmail.com</email>
   </author>
   <content type="html">
@@ -389,26 +389,26 @@ Python, Git, OpenRave, OpenCV, PCL, ROS, Gazebo)&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Cheers,&lt;/p&gt;
 
 &lt;figure style=&quot;width: 100%; text-align: center;&quot;&gt;
-	&lt;img src=&quot;/images/workingtabletopview.jpg&quot; /&gt;
+	&lt;img src=&quot;http://localhost:5000/images/workingtabletopview.jpg&quot; /&gt;
 	&lt;figcaption&gt;Image designed
 by &lt;a href=&quot;http://www.freepik.com/free-vector/workplace-in-top-view_788440.htm&quot;&gt;Freepik&lt;/a&gt; &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;/projects/osrobotics/&quot;&gt;Our website for a free course on Open-Source Robotics has been deployed&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on March 15, 2017.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:5000/projects/osrobotics/&quot;&gt;Our website for a free course on Open-Source Robotics has been deployed&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;http://localhost:5000&quot;&gt;Huy Nguyen&lt;/a&gt; on March 15, 2017.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Introduction to robot vision]]></title>
-  <link rel="alternate" type="text/html" href="/blog/introduction-to-robot-vision/" />
-  <id>/blog/introduction-to-robot-vision</id>
+  <link rel="alternate" type="text/html" href="http://localhost:5000/blog/introduction-to-robot-vision/" />
+  <id>http://localhost:5000/blog/introduction-to-robot-vision</id>
   <published>2017-01-03T00:00:00+08:00</published>
   <updated>2017-01-03T00:00:00+08:00</updated>
   <author>
     <name>Huy Nguyen</name>
-    <uri></uri>
+    <uri>http://localhost:5000</uri>
     <email>huy.nguyendinh09@gmail.com</email>
   </author>
   <content type="html">
@@ -430,7 +430,7 @@ enable the robot to perform its intended task–assembly, drilling,
 inspection, etc.&lt;/p&gt;
 
 &lt;figure style=&quot;text-align: center;&quot;&gt;
-  &lt;img src=&quot;/images/denso-ensenso-object.png&quot; /&gt;
+  &lt;img src=&quot;http://localhost:5000/images/denso-ensenso-object.png&quot; /&gt;
   &lt;figcaption&gt;&quot;Fig.: Locating a workpiece with respect to the camera and to the
 robot.&quot;&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -473,7 +473,7 @@ as captured by a stereo camera. This example demonstrates how to find the
 coordinates of the hole in the 2D images and how to subsequently
 determine its 3D position.&lt;/p&gt;
   &lt;figure style=&quot;text-align: center;&quot;&gt;
- &lt;img src=&quot;/images/stereo_image.png&quot; /&gt;
+ &lt;img src=&quot;http://localhost:5000/images/stereo_image.png&quot; /&gt;
  &lt;figcaption&gt;&quot;Fig.: Scene captured by a stereo camera (left and right views).&quot;&lt;/figcaption&gt;
 &lt;/figure&gt;
   &lt;p&gt;First, make sure that you have installed
@@ -510,7 +510,7 @@ success, rres = get_hole_center2d(rimage)
 &lt;/code&gt;&lt;/pre&gt;
 
   &lt;figure style=&quot;text-align: center;&quot;&gt;
-  &lt;img src=&quot;/images/image_contours.png&quot; /&gt;
+  &lt;img src=&quot;http://localhost:5000/images/image_contours.png&quot; /&gt;
   &lt;figcaption&gt;&quot;Fig.: The hole contour is detected in the right image.&quot;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -601,20 +601,20 @@ found at
 It’s important to note that with different models and scene some parameter values might need to be adjusted. You &lt;strong&gt;should&lt;/strong&gt; play around with them to see how they influence the final result.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/blog/introduction-to-robot-vision/&quot;&gt;Introduction to robot vision&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on January 03, 2017.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:5000/blog/introduction-to-robot-vision/&quot;&gt;Introduction to robot vision&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;http://localhost:5000&quot;&gt;Huy Nguyen&lt;/a&gt; on January 03, 2017.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Robotics Workstation Setup in Ubuntu 16.04 (Xenial)]]></title>
-  <link rel="alternate" type="text/html" href="/blog/Ubuntu-1604-xenial-installation/" />
-  <id>/blog/Ubuntu-1604-xenial-installation</id>
+  <link rel="alternate" type="text/html" href="http://localhost:5000/blog/Ubuntu-1604-xenial-installation/" />
+  <id>http://localhost:5000/blog/Ubuntu-1604-xenial-installation</id>
   <published>2016-08-19T00:00:00+08:00</published>
   <updated>2016-08-19T00:00:00+08:00</updated>
   <author>
     <name>Huy Nguyen</name>
-    <uri></uri>
+    <uri>http://localhost:5000</uri>
     <email>huy.nguyendinh09@gmail.com</email>
   </author>
   <content type="html">
@@ -648,20 +648,20 @@ It’s important to note that with different models and scene some parameter val
 &lt;p&gt;For installing ROS and Openrave, please refer to the following &lt;a href=&quot;http://fsuarez6.github.io/blog/workstation-setup-xenial/&quot;&gt;page&lt;/a&gt;&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;/blog/Ubuntu-1604-xenial-installation/&quot;&gt;Robotics Workstation Setup in Ubuntu 16.04 (Xenial)&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on August 19, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:5000/blog/Ubuntu-1604-xenial-installation/&quot;&gt;Robotics Workstation Setup in Ubuntu 16.04 (Xenial)&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;http://localhost:5000&quot;&gt;Huy Nguyen&lt;/a&gt; on August 19, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[We won 2nd place at Airbus Shopfloor Challenge @ICRA2016]]></title>
-  <link rel="alternate" type="text/html" href="/projects/airbus-shoopfloor-challenge-at-ICRA/" />
-  <id>/projects/airbus-shoopfloor-challenge-at-ICRA</id>
+  <link rel="alternate" type="text/html" href="http://localhost:5000/projects/airbus-shoopfloor-challenge-at-ICRA/" />
+  <id>http://localhost:5000/projects/airbus-shoopfloor-challenge-at-ICRA</id>
   <published>2016-05-25T00:00:00+08:00</published>
   <updated>2016-05-25T00:00:00+08:00</updated>
   <author>
     <name>Huy Nguyen</name>
-    <uri></uri>
+    <uri>http://localhost:5000</uri>
     <email>huy.nguyendinh09@gmail.com</email>
   </author>
   <content type="html">
@@ -680,27 +680,27 @@ It’s important to note that with different models and scene some parameter val
 &lt;p&gt;Bonus: We had 3 months to build up our system (since we decided to join the challenge). We did work really hard. And we did learn a lot from the challenge! Such a great experience!&lt;/p&gt;
 
 &lt;figure style=&quot;text-align: center&quot;&gt;
-  &lt;img src=&quot;/images/airbus_challenge.jpg&quot; /&gt;
+  &lt;img src=&quot;http://localhost:5000/images/airbus_challenge.jpg&quot; /&gt;
   &lt;figcaption&gt;Fig.1: Our team with the robot. We drilled the group name onto the plate to showcase our abilies to airbus for the first round.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/FUmx7c8P-gs?start=179&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;figcaption style=&quot;text-align: center&quot;&gt;Vid.1: Interview at the live competition&lt;/figcaption&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/projects/airbus-shoopfloor-challenge-at-ICRA/&quot;&gt;We won 2nd place at Airbus Shopfloor Challenge @ICRA2016&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on May 25, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:5000/projects/airbus-shoopfloor-challenge-at-ICRA/&quot;&gt;We won 2nd place at Airbus Shopfloor Challenge @ICRA2016&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;http://localhost:5000&quot;&gt;Huy Nguyen&lt;/a&gt; on May 25, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[When robotic and art unite]]></title>
-  <link rel="alternate" type="text/html" href="/projects/light-drawing/" />
-  <id>/projects/light-drawing</id>
+  <link rel="alternate" type="text/html" href="http://localhost:5000/projects/light-drawing/" />
+  <id>http://localhost:5000/projects/light-drawing</id>
   <published>2016-03-26T00:00:00+08:00</published>
   <updated>2016-03-26T00:00:00+08:00</updated>
   <author>
     <name>Huy Nguyen</name>
-    <uri></uri>
+    <uri>http://localhost:5000</uri>
     <email>huy.nguyendinh09@gmail.com</email>
   </author>
   <content type="html">
@@ -719,27 +719,27 @@ It’s important to note that with different models and scene some parameter val
 &lt;p&gt;And the results look really amazing…&lt;/p&gt;
 
 &lt;figure style=&quot;text-align: center;&quot;&gt;
-  &lt;img src=&quot;/images/face_drawing.jpeg&quot; /&gt;
-	&lt;img src=&quot;/images/dancer_drawing.jpeg&quot; /&gt;
-	&lt;img src=&quot;/images/text_drawing.jpeg&quot; /&gt;
-	&lt;img src=&quot;/images/bunny_drawing.jpeg&quot; /&gt;
+  &lt;img src=&quot;http://localhost:5000/images/face_drawing.jpeg&quot; /&gt;
+	&lt;img src=&quot;http://localhost:5000/images/dancer_drawing.jpeg&quot; /&gt;
+	&lt;img src=&quot;http://localhost:5000/images/text_drawing.jpeg&quot; /&gt;
+	&lt;img src=&quot;http://localhost:5000/images/bunny_drawing.jpeg&quot; /&gt;
   &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/projects/light-drawing/&quot;&gt;When robotic and art unite&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on March 26, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:5000/projects/light-drawing/&quot;&gt;When robotic and art unite&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;http://localhost:5000&quot;&gt;Huy Nguyen&lt;/a&gt; on March 26, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Calculate time left]]></title>
-  <link rel="alternate" type="text/html" href="/blog/test/" />
-  <id>/blog/test</id>
+  <link rel="alternate" type="text/html" href="http://localhost:5000/blog/test/" />
+  <id>http://localhost:5000/blog/test</id>
   <published>2016-01-01T00:00:00+08:00</published>
   <updated>2016-01-01T00:00:00+08:00</updated>
   <author>
     <name>Huy Nguyen</name>
-    <uri></uri>
+    <uri>http://localhost:5000</uri>
     <email>huy.nguyendinh09@gmail.com</email>
   </author>
   <content type="html">
@@ -750,7 +750,7 @@ folder&lt;/strong&gt;. Then click Run and see the result at the black frame.&lt;
 &lt;p&gt;&lt;em&gt;Note&lt;/em&gt;: Your files must be named as &lt;strong&gt;dd-mm.csv&lt;/strong&gt; e.g. 10-Oct.csv&lt;/p&gt;
 
 &lt;figure style=&quot;text-align: center&quot;&gt;
-  &lt;img src=&quot;/images/intro.png&quot; /&gt;
+  &lt;img src=&quot;http://localhost:5000/images/intro.png&quot; /&gt;
   &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -760,7 +760,7 @@ folder&lt;/strong&gt;. Then click Run and see the result at the black frame.&lt;
 &lt;h4 id=&quot;check-status-of-a-period-of-time&quot;&gt;Check status of a period of time&lt;/h4&gt;
 &lt;iframe height=&quot;400px&quot; width=&quot;100%&quot; src=&quot;https://repl.it/@huynguyendinh/CheckForPeriodOfTime?lite=true&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; allowtransparency=&quot;true&quot; allowfullscreen=&quot;true&quot; sandbox=&quot;allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals&quot;&gt;&lt;/iframe&gt;
 
-    &lt;p&gt;&lt;a href=&quot;/blog/test/&quot;&gt;Calculate time left&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;&quot;&gt;Huy Nguyen&lt;/a&gt; on January 01, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:5000/blog/test/&quot;&gt;Calculate time left&lt;/a&gt; was originally published by Huy Nguyen at &lt;a href=&quot;http://localhost:5000&quot;&gt;Huy Nguyen&lt;/a&gt; on January 01, 2016.&lt;/p&gt;
   </content>
 </entry>
 
